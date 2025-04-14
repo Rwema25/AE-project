@@ -16,14 +16,14 @@ Documenting the datasets and packages is part of the project’s activities. The
 
 | PERSONA | STAKEHOLDER  | CONTACT     | EMAIL       | DATE      | REGION           | INTERV.        | STATUS      | COMMENTS      |  
 |---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|
-| Scientist | AIMS RIC   | Bamba       |             |           |                  |                |             |               |     
+| Scientist | AIMS RIC   | Dr. Mouhamadou Bamba Sylla| msylla@aimsric.org| Rwanda           |                  |                |             |               |     
 | Policy Advisor  | Agrimet             |             |             |           |                  |                |             |               |   
 | Policy Advisor   | ICPAC  |             |             |           |                  |                |             |               |   
 | Policy Advisor|  Met service   |             |             |           |                  |                |             |               |    
-| Policy Advisor   | RICA  | | | | | | | |
+| Policy Advisor   | RICA  | Dr. Magnifique Ndambe Nzaramba | mnzaramba@rica.rw| Rwanda| | | | |
 | Policy Advisor    | RAB | | | | | | | |
 | Policy Advisor    | REMA| | | | | | | |
-| Policy Advisor  | MINEMA| | | | | | | |
+| Policy Advisor  | GIZ | Olivier Niyompuhwe | olivier.niyompuhwe@giz.de | Rwanda | | | | |
 | Policy Advisor   | SADEC| | | | | | | |
 
 </details>
