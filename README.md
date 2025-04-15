@@ -27,3 +27,13 @@ Documenting the datasets and packages is part of the project’s activities. The
 | Policy Advisor   | SADEC| | | | | | | |
 
 </details>
+
+
+<details>
+<summary> Existing Climate Data Tools </summary>
+
+| Name    | Source       | Uded for    | Package     | Data format| Output      | Rainy season Char. | Climate Extr. indices | Drought indices      | Available | Issues |
+|---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|---------------|------------|
+| CDT     | International Research Institute for Climate and Society   |Data preparation, Quality control, Gridding, Validation, Analysis, Visualization | CDT (in R)| Csv, NetCDF   | Data, Maps, Time series    | Onset, Cessation, Season Length               | Precipitation, temperature    | SPI, SPEI, Deciles | GitHub: [Link](https://github.com/rijaf-iri/CDT) | GitHub: [Link](https://github.com/rijaf-iri/CDT/issues/1) |
+
+</details>
