@@ -35,5 +35,27 @@ Documenting the datasets and packages is part of the project’s activities. The
 | Name    | Source       | Uded for    | Package     | Data format| Output      | Rainy season Char. | Climate Extr. indices | Drought indices      | Available | Issues |
 |---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|---------------|------------|
 | CDT     | International Research Institute for Climate and Society   |Data preparation, Quality control, Gridding, Validation, Analysis, Visualization | CDT (in R)| Csv, NetCDF   | Data, Maps, Time series    | Onset, Cessation, Season Length               | Precipitation, temperature    | SPI, SPEI, Deciles | GitHub: [Link](https://github.com/rijaf-iri/CDT) | GitHub: [Link](https://github.com/rijaf-iri/CDT/issues/1) |
+| East Africa Drought Watch||||||||SPI, SMA, CDI, FAPAR Anomaly||[Link](https://droughtwatch.icpac.net/report-v2/?qstr=eyJwYXJhbXMiOnsicmVwb3J0aW5nX3VuaXQiOiJFYXN0IEFmcmljYSBSZWdpb24iLCJhZG1pbl9sZXZlbCI6bnVsbCwidW5pdF9pZCI6bnVsbCwicGFfaWQiOm51bGwsInBsYWNlbmFtZSI6IkVhc3QgQWZyaWNhIFJlZ2lvbiIsInBlcmlvZF9jeWNsZSI6IkRla2FkYWwiLCJkYXRhX2RhdGUiOiIyMDE4LTAxLTIxIiwic21hX2RhdGFfZGF0ZSI6IjIwMTgtMDEtMTEiLCJmYXBhbl9kYXRhX2RhdGUiOiIyMDE4LTAxLTIxIiwic3BpX2RhdGFfZGF0ZSI6IjIwMTgtMDEtMDEiLCJ0aW1lc2NhbGUiOm51bGwsInByb2plY3RfbmFtZSI6bnVsbCwicmVzdG9yZV9wZGYiOmZhbHNlfSwic2hhcmUiOnsib3BlbiI6ZmFsc2UsImNvcGllZCI6ZmFsc2UsInRpbnlfdXJsIjpudWxsfSwic2VsZWN0ZWQiOnsiZGF0YV9kYXRlIjoiMjAxOC0wMS0yMSIsInBlcmlvZF9jeWNsZSI6IkRla2FkYWwiLCJ0aW1lc2NhbGUiOm51bGwsInJlc3RvcmVfcGRmIjpmYWxzZX0sImV4cG9ydCI6eyJwZGYiOnsibG9hZGluZyI6ZmFsc2UsImVycm9yIjpudWxsfX19)|
+</details>
 
+
+<details>
+<summary> Indicators </summary>
+  
+# Drought Indicators 
+  
+## Standardized Precipitation Index (SPI)
+
+This indicator measures anomalies of accumulated precipitation during a given period (e.g. 1, 3, 12 months), and is the most commonly used indicator for detecting and characterizing meteorological droughts.
+
+## Soil Moisture Anomaly (SMA)
+
+This indicator measures anomalies of daily soil moisture (water) content, and is used to measure the start and duration of agricultural drought conditions.
+
+## Combined Drought Indicator (CDI)
+
+This indicator integrates information on anomalies of precipitation, soil moisture and satellite-measured vegetation condition, into a single index that is used to monitor both the onset of agricultural drought and its evolution in time and space.
+
+## Anomaly of Vegetation Condition (FAPAR Anomaly)
+This indicator measures anomalies of satellite-measured FAPAR (Fraction of Absorbed Photosynthetically Active Radiation), and is used to highlight areas of relative vegetation stress due to agricultural drought
 </details>
