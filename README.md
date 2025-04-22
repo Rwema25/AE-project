@@ -32,10 +32,11 @@ Documenting the datasets and packages is part of the project’s activities. The
 <details>
 <summary> Existing Climate Data Tools </summary>
 
-| Name    | Source       | Uded for    | Package     | Data format| Output      | Rainy season Char. | Climate Extr. indices | Drought indices      | Available | Issues |
+| Name    | Source       | Used for    | Package     | Data format| Output      | Rainy season Char. | Climate Extr. indices | Drought indices      | Available | Issues |
 |---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|---------------|------------|
 | CDT     | International Research Institute for Climate and Society   |Data preparation, Quality control, Gridding, Validation, Analysis, Visualization | CDT (in R)| Csv, NetCDF   | Data, Maps, Time series    | Onset, Cessation, Season Length               | Precipitation, temperature    | SPI, SPEI, Deciles | GitHub: [Link](https://github.com/rijaf-iri/CDT) | GitHub: [Link](https://github.com/rijaf-iri/CDT/issues/1) |
 | East Africa Drought Watch||||||||SPI, SMA, CDI, FAPAR Anomaly||[Link](https://droughtwatch.icpac.net/report-v2/?qstr=eyJwYXJhbXMiOnsicmVwb3J0aW5nX3VuaXQiOiJFYXN0IEFmcmljYSBSZWdpb24iLCJhZG1pbl9sZXZlbCI6bnVsbCwidW5pdF9pZCI6bnVsbCwicGFfaWQiOm51bGwsInBsYWNlbmFtZSI6IkVhc3QgQWZyaWNhIFJlZ2lvbiIsInBlcmlvZF9jeWNsZSI6IkRla2FkYWwiLCJkYXRhX2RhdGUiOiIyMDE4LTAxLTIxIiwic21hX2RhdGFfZGF0ZSI6IjIwMTgtMDEtMTEiLCJmYXBhbl9kYXRhX2RhdGUiOiIyMDE4LTAxLTIxIiwic3BpX2RhdGFfZGF0ZSI6IjIwMTgtMDEtMDEiLCJ0aW1lc2NhbGUiOm51bGwsInByb2plY3RfbmFtZSI6bnVsbCwicmVzdG9yZV9wZGYiOmZhbHNlfSwic2hhcmUiOnsib3BlbiI6ZmFsc2UsImNvcGllZCI6ZmFsc2UsInRpbnlfdXJsIjpudWxsfSwic2VsZWN0ZWQiOnsiZGF0YV9kYXRlIjoiMjAxOC0wMS0yMSIsInBlcmlvZF9jeWNsZSI6IkRla2FkYWwiLCJ0aW1lc2NhbGUiOm51bGwsInJlc3RvcmVfcGRmIjpmYWxzZX0sImV4cG9ydCI6eyJwZGYiOnsibG9hZGluZyI6ZmFsc2UsImVycm9yIjpudWxsfX19)|
+|EDACaP| | agroclimate information and advisory |  | | | | | |[Link](https://edacap.ethioagroclimate.net/#/Home) | |
 </details>
 
 
