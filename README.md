@@ -43,7 +43,7 @@ Documenting the datasets and packages is part of the project’s activities. The
 <details>
 <summary> Indicators </summary>
   
-# Drought Indicators 
+# Drought Indicators and Indices
 
 
 
@@ -85,7 +85,7 @@ Drought indicators and indices provide crucial information for:
 * **Risk Management:** Helping individuals, communities, and businesses prepare for and cope with drought impacts.
 
 ### 1.3. Purpose of the Document <a name="purpose-of-the-document"></a>
-This document aims to provide a comprehensive overview of drought and the key indicators and indices used to monitor and assess its characteristics. It can also be considered as as a guide for understanding and interpreting common drought indices.
+This document aims to provide a comprehensive overview of drought and the key indicators and indices used to monitor and assess its characteristics. It can also be considered as a guide for understanding and interpreting common drought indices.
 
 It will cover the different types of drought, explain the methodologies behind various indicators, discuss their strengths and limitations, and highlight their role in drought monitoring and impact assessment.
 
@@ -134,9 +134,28 @@ While not directly measured by a single index, socioeconomic drought is assessed
 ## 3. Drought Indicators and Indices <a name="drought-indicators-and-indices"></a>
 
 ### 3.1. Standardized Precipitation Index (SPI) <a name="standardized-precipitation-index-spi"></a>
-* **Description:** The Standardized Precipitation Index (SPI) is a widely used index to characterize meteorological drought on a range of timescales (e.g., 1, 3, 6, 12, 24, 48 months). It quantifies precipitation deficits relative to the long-term average for a specific location and time period.
+* **Description:** The Standardized Precipitation Index (SPI) is a widely used index to characterize meteorological drought on a range of timescales (e.g., 1, 3, 6, 12, 24, 48 months). It quantifies precipitation deficits (or surpluses) relative to the long-term average for a specific location and time period. These different durations reflect the impact of precipitation anomalies on different components of the hydrological system and various human activities.
+   
 * **Calculation/Methodology (Simplified):** The SPI is calculated by fitting a probability distribution (typically a Gamma distribution) to the long-term precipitation data for a given location and timescale. The cumulative probability is then transformed to a standard normal distribution, resulting in the SPI value. A negative SPI indicates drought, and the magnitude of the negative value reflects the severity.
+
+| SPI Value           | Category | General Interpretation (Meteorological Drought)   | General Relationship to Crop Hazards |
+|---------------------|----------|----------------------------------------------------|--------------------------------------|
+| ≥ 2.00              | Extremely Wet        | Significantly above average precipitation for the specified duration. | Generally beneficial, but excessive wetness can also cause issues (e.g., waterlogging for some crops).  |
+| 1.50 to 1.99        | Very Wet             | Well above average precipitation for the specified duration.  | Generally favorable, but potential for waterlogging in susceptible crops/soils. |
+| 1.00 to 1.49        | Moderately Wet    | Above average precipitation for the specified duration.    | Generally positive for crop growth. |
+| -0.99 to 0.99       | Near Normal          | Precipitation close to the long-term average for the specified duration.        | Generally adequate for most crops under normal conditions. |
+| -1.00 to -1.49      | Moderately Dry       | Below average precipitation, indicating a moderate drought for the duration.      | Potential for moisture stress, especially for water-sensitive crops or during critical growth stages. Yield reductions possible.   |
+| -1.50 to -1.99      | Severely Dry         | Significantly below average precipitation, indicating a severe drought.           | Likely to cause significant moisture stress, impacting growth and potentially leading to substantial yield losses for many crops. |
+| ≤ -2.00             | Extremely Dry        | Exceptionally low precipitation, indicating an extreme drought.                   | High probability of severe crop failure or significant yield losses for most crops without irrigation.  |
+
 * **Temporal and Spatial Scale:** SPI can be calculated for various time scales, allowing for the monitoring of short-term (e.g., agricultural drought) and long-term (e.g., hydrological drought) precipitation deficits. It is spatially flexible and can be calculated for individual stations, regions, or even globally.
+
+  | SPI Timescale (Months) | Phenomena Reflected                                      | Applications                                                                 |
+  |------------------------|----------------------------------------------------------|------------------------------------------------------------------------------|
+  | **1-3 (Short-Term)**   | Topsoil moisture, small streamflow, early vegetation stress, fire risk | Agricultural drought monitoring (early warning), short-term water resource management, fire risk assessment |
+  | **6-12 (Medium-Term)** | Larger streamflow, smaller to medium reservoir levels, early groundwater recharge impacts, established agricultural drought | Agricultural drought assessment, water resource management (rivers, medium reservoirs), hydropower planning |
+  | **24-48+ (Long-Term)** | Large reservoir and lake levels, major aquifer levels, ecological drought, socio-economic impacts | Long-term water resource planning, groundwater monitoring, ecological drought assessment, drought preparedness and mitigation |
+
 * **Strengths:**
     * Simple to calculate and interpret.
     * Can be used to analyze drought at multiple timescales, making it useful for different applications.
@@ -151,7 +170,29 @@ While not directly measured by a single index, socioeconomic drought is assessed
 ### 3.2. Palmer Drought Severity Index (PDSI) <a name="palmer-drought-severity-index-pdsi"></a>
 * **Description:** The Palmer Drought Severity Index (PDSI) is a more complex index that attempts to measure the cumulative deficit in the water balance. It considers precipitation, temperature, and evapotranspiration, as well as factors like soil moisture, runoff, and recharge.
 * **Calculation/Methodology (Simplified):** The PDSI uses a water balance equation to estimate the amount of moisture supply needed for normal conditions in a region. It then compares this with the actual moisture supply to determine the severity of drought or wet spells. The index values typically range from -4.0 (extreme drought) to +4.0 (extremely wet).
+
+| PDSI Value          | Category             | General Interpretation (Long-Term Moisture Conditions) | General Relationship to Crop Hazards|
+|---------------------|----------------------|--------------------------------------------------------|-------------------------------------|
+|≥ +4.00	|Extremely Wet |	Prolonged period of exceptionally high moisture surplus. Soil moisture is excessive, and water resources are abundant. | |
+|+3.00 to +3.99	| Very Wet	| Extended period of significant moisture surplus. Soil moisture is well above average, and water resources are plentiful. | |
+|+2.00 to +2.99 |	Moderately Wet	| Extended period of moderate moisture surplus. Soil moisture is above average, and water resources are generally good. | |
+|+1.00 to +1.99	| Slightly Wet	|Extended period with a small moisture surplus. Soil moisture is slightly above average. | |
+|+0.5 to +0.99	| Incipient Wet Spell	| Beginning of a period with slightly above normal moisture. | |
+|-0.49 to +0.49	| Near Normal	| Moisture conditions are close to the long-term average. | |
+|-0.50 to -0.99	| Incipient Dry Spell |	Beginning of a period with slightly below normal moisture. | |
+|-1.00 to -1.99 |	Mild Drought	| Extended period of mild moisture deficit. Soil moisture is below average, and some water stress may begin to appear. | |
+|-2.00 to -2.99 |	Moderate Drought	| Extended period of moderate moisture deficit. Soil moisture is significantly below average, and crop stress is likely. Water shortages may develop. | |
+|-3.00 to -3.99 |	Severe Drought	| Extended period of substantial moisture deficit. Soil moisture is very low, and significant crop damage and water shortages are expected.| |
+|≤ -4.00	| Extreme Drought	| Prolonged period of exceptionally severe moisture deficit. Soil moisture is critically low, widespread crop failure and severe water shortages are highly probable.| |
+
 * **Temporal and Spatial Scale:** PDSI is typically calculated on a monthly basis and is suitable for assessing long-term drought conditions. It is often used at regional or larger scales.
+
+  | PDSI Characteristic          | Phenomena Reflected       |   Key Applications  |                                                                                        
+  |------------------------------|---------------------------|---------------------|
+  | **Timescale Relevance**      | Primarily reflects **long-term drought conditions** (months to years) due to its cumulative nature. Responds slower to short-term changes. | Assessing prolonged drought impacts on agriculture and water resources. Historical drought analysis.|
+  | **Phenomena Reflected**      | Cumulative moisture deficit or surplus, considering precipitation, temperature, and soil moisture. Good for broad-scale, long-term conditions.| Identifying long-lasting drought events and their severity. Comparing drought severity across different regions.|
+  | **Key Applications**         | Historical drought analysis, broad-scale drought monitoring, assessing long-term agricultural and hydrological impacts.| Policy decisions related to long-term drought management and water allocation.|
+
 * **Strengths:**
     * Considers both precipitation and temperature, providing a more comprehensive assessment of drought.
     * Attempts to account for soil moisture conditions.
@@ -166,6 +207,13 @@ While not directly measured by a single index, socioeconomic drought is assessed
 * **Description:** The Vegetation Condition Index (VCI) uses satellite-derived Normalized Difference Vegetation Index (NDVI) data to assess the health and vigor of vegetation relative to its historical range. It expresses the current NDVI as a percentage of the historical maximum-minimum range for a given location and time of year.
 * **Calculation/Methodology (Simplified):** VCI = (NDVI\_current - NDVI\_min) / (NDVI\_max - NDVI\_min) \* 100. Where NDVI\_current is the NDVI for the current period, and NDVI\_min and NDVI\_max are the minimum and maximum NDVI values observed in the historical record for the same period.
 * **Temporal and Spatial Scale:** VCI can be calculated at various temporal resolutions (e.g., weekly, bi-weekly, monthly) and spatial resolutions depending on the satellite data used. It is particularly useful for monitoring agricultural drought and vegetation stress.
+
+| VCI Characteristic          | Phenomena Reflected           |    Key Applications    |
+|-----------------------------|-------------------------------|------------------------|
+| **Timescale Relevance**     | Typically used for **short-to-medium term** impacts on vegetation health (weeks to months), aligning with vegetation growth cycles.| Monitoring real-time vegetation stress due to drought. Early warning of agricultural drought impacts.|
+| **Phenomena Reflected**     | Vegetation health and vigor relative to its historical range, indicating moisture stress affecting plant growth.                             | Assessing the spatial extent and severity of vegetation drought stress. Identifying areas with potential crop yield reductions. |
+| **Key Applications**        | Agricultural drought monitoring, vegetation stress assessment, early warning of famine or food insecurity, land degradation monitoring.      | Guiding targeted interventions for agricultural support and disaster relief. |
+  
 * **Strengths:**
     * Provides a direct measure of vegetation health and response to moisture stress.
     * Utilizes readily available satellite data, allowing for broad spatial coverage.
@@ -184,6 +232,13 @@ While not directly measured by a single index, socioeconomic drought is assessed
     3.  Fit a probability distribution (often a Log-logistic distribution) to the aggregated water balance data.
     4.  Transform the cumulative probability to a standard normal distribution, resulting in the SPEI value. Negative SPEI values indicate drought, with the magnitude reflecting severity.
 * **Temporal and Spatial Scale:** SPEI can be calculated for various time scales, making it suitable for monitoring different types of drought. It is spatially flexible and can be applied at local, regional, and global levels.
+
+| SPEI Timescale (Months) | Phenomena Reflected  | Applications    |
+|-------------------------|----------------------|-----------------|
+| **1-3 (Short-Term)**    | Short-term **climatic water balance** impacting topsoil moisture under evaporative demand, stress on rain-fed agriculture considering temperature, fire risk influenced by dryness and heat. | Agricultural drought monitoring (early warning considering temperature impacts), short-term water resource management under evaporative stress, fire risk assessment. |
+| **6-12 (Medium-Term)**  | Medium-term **climatic water balance** affecting streamflow in larger rivers under thermal influences, reservoir levels considering evaporation, evolving agricultural drought under changing water demand. | Agricultural drought assessment considering temperature, water resource management for rivers and medium reservoirs accounting for evaporation, hydropower planning under climate influences. |
+| **24-48+ (Long-Term)** | Long-term **climatic water balance** impacting large reservoir and lake levels with significant evaporation effects, major aquifer recharge under changing climate, prolonged ecological and socio-economic impacts influenced by both precipitation and temperature. | Long-term water resource planning under climate change, groundwater monitoring considering long-term water balance, assessment of ecological drought under thermal stress, drought preparedness and mitigation in a warming climate. |
+  
 * **Strengths:**
     * Incorporates the effect of temperature and potential evapotranspiration, making it more sensitive to the impacts of climate change on drought.
     * Allows for the assessment of drought severity in terms of water balance rather than just precipitation deficits.
@@ -208,6 +263,13 @@ While not directly measured by a single index, socioeconomic drought is assessed
             $$RAI = -3 \times \frac{P_i - \bar{P}}{\bar{P} - \overline{P}_{L10}}$$
             where $\overline{P}_{L10}$ is the mean of the 10 lowest precipitation values in the historical record for that period.
 * **Temporal and Spatial Scale:** RAI can be calculated for various time scales (monthly, seasonal, annual) and is applicable at different spatial scales depending on the availability of precipitation data.
+
+| RAI Characteristic          | Phenomena Reflected   | Key Applications   |
+|-----------------------------|-----------------------|--------------------|
+| **Timescale Relevance**     | Calculated for **various timescales** (monthly, seasonal, annual), focusing purely on precipitation deviations.| Simple meteorological drought monitoring, particularly in regions where precipitation data is the primary available variable. |
+| **Phenomena Reflected**     | Departure of precipitation from the long-term mean, with separate calculations for positive and negative anomalies. | Identifying and classifying the severity of wet and dry periods based solely on rainfall. |
+| **Key Applications**        | Basic meteorological drought assessment, historical rainfall variability studies.    | Providing a straightforward measure of precipitation deficits for non-complex analyses.  |
+
 * **Strengths:**
     * Relatively simple to calculate.
     * Considers the magnitude of both wet and dry anomalies in a way that acknowledges the typical distribution of rainfall.
@@ -223,6 +285,13 @@ While not directly measured by a single index, socioeconomic drought is assessed
 * **Calculation/Methodology (Simplified):**
     $$PNP = \frac{\text{Current Period Precipitation}}{\text{Long-Term Average Precipitation}} \times 100$$
 * **Temporal and Spatial Scale:** PNP can be calculated for any time scale (e.g., monthly, seasonal, annual) and at any location where precipitation data is available.
+
+| PNP Characteristic          | Phenomena Reflected | Key Applications    |
+|-----------------------------|---------------------|---------------------|
+| **Timescale Relevance**     | Can be calculated for **any timescale**, providing a simple snapshot of precipitation relative to the average.  | Quick and easy communication of precipitation status to a general audience. |
+| **Phenomena Reflected**     | Current precipitation as a percentage of the long-term average precipitation for the same period.  | Identifying areas with precipitation deficits or surpluses relative to their normal amounts. |
+| **Key Applications**        | Initial drought screening, public awareness campaigns, simple climate summaries.   | Providing a basic understanding of how current precipitation compares to the norm.  |
+
 * **Strengths:**
     * Very simple to calculate and easy to understand.
     * Provides a quick and intuitive measure of precipitation deficit or surplus.
@@ -466,6 +535,13 @@ While not directly measured by a single index, socioeconomic drought is assessed
     3. **Weighting (Optional):** Assigning weights to the component indicators based on their perceived importance or relevance for the specific region and application. Weights can be equal or based on statistical analysis or expert judgment.
     4. **Aggregation:** Combining the standardized (and potentially weighted) component indicators using mathematical formulas (e.g., averaging, weighted sum, or more complex multivariate techniques) to produce a single CDI value or category.
 * **Temporal and Spatial Scale:** The temporal and spatial scale of a CDI depends on the scales of the input indicators used in its calculation. It can range from local to regional and can be updated at various time intervals (e.g., weekly, monthly).
+
+| CDI Characteristic          | Phenomena Reflected  | Key Applications     |
+|-----------------------------|----------------------|----------------------|
+| **Timescale Relevance** | Varies depending on the component indicators included, typically aiming for a **multi-timescale** perspective for a more robust assessment.  | Region-specific drought monitoring and early warning systems, tailored to local conditions and vulnerabilities. Integrated assessment for specific sectors (e.g., agriculture, water supply).   |
+| **Phenomena Reflected** | Integrated measure of drought severity by combining standardized and potentially weighted information from meteorological, agricultural, and hydrological indicators. Aims for a holistic view of drought. | Providing a more reliable and context-specific assessment of drought conditions and risks. Enhancing the accuracy of drought monitoring and forecasts for targeted actions.  |
+| **Key Applications** | Regional drought management, triggering local drought response plans, sector-specific drought monitoring and decision support, research on integrated drought assessment methodologies. | Improving the effectiveness of drought management strategies by providing a more nuanced and locally relevant understanding of drought conditions. Supporting proactive drought risk management.  |
+
 * **Strengths:**
     * Provides a more comprehensive assessment of drought by integrating information from multiple drought types.
     * Can potentially provide a more reliable indicator of drought onset, persistence, and severity compared to relying on a single indicator.
@@ -731,26 +807,38 @@ An integrated approach that considers multiple indicators and incorporates spati
 
 Continuous monitoring and the development of robust early warning systems are essential for building resilience to future drought events.
 
-*(Add any specific concluding remarks relevant to your document's purpose.)*
+
 
 ## 8. References (Optional) <a name="references-optional"></a>
 
+o	Svoboda, M., & Fuchs, B. A. (2016). Handbook of Drought Indicators and Indices. Integrated Drought Management Programme (IDMP), Integrated Drought Management Tools and Guidelines Series 2. World Meteorological Organization (WMO) and Global Water Partnership (GWP).   
+o	Wilhite, D. A. (2000). Drought: A Global Assessment (Vol. 1). Routledge.
+o	Heim Jr., R. R. (2002). A review of twentieth-century drought indices used in the United States. Bulletin of the American Meteorological Society, 83(8), 1149-1165.  
+
+o	McKee, T. B., Doesken, N. J., & Kleist, J. (1993). The relationship of drought frequency and duration to time scales. In Eighth Conference on Applied Climatology (pp. 179-184). American Meteorological Society.  
+o	Lloyd-Hughes, B., & Saunders, M. A. (2002). A drought climatology for Europe. International Journal of Climatology, 22(11), 1571-1592. 
+
+o	Palmer, W. C. (1965). Meteorological drought. US Department of Commerce, Weather Bureau. 
+o	Alley, W. M. (1984). The Palmer drought severity index: Limitations and assumptions. Journal of Climate and Applied Meteorology, 23(7), 1100-1109.   
+
+o	Kogan, F. N. (1990). Remote sensing of drought with AVHRR. In Seventh Conference on Applied Climatology (pp. 175-178). American Meteorological Society. 
+o	Kogan, F. N. (1995). Application of vegetation index and brightness temperature for drought detection. Advances in Space Research, 15(11), 91-100. 
+o	Vicente-Serrano, S. M., Beguería, S., & López-Moreno, J. I. (2010). A multiscalar drought index sensitive to global warming: The Standardized Precipitation Evapotranspiration Index. Journal of Climate, 23(7), 1696-1718.    
+
+o	Van Rooy, M. P. (1965). A rainfall anomaly index independent of time and space. Notos, 14, 43-48. 
+
+
+o	Huete, A., Didan, K., Miura, T., Rodriguez, E. P., Gao, X., & Ferreira, L. G. (2002). Overview of the radiometric and biophysical performance of the MODIS vegetation indices. Remote Sensing of Environment, 83(1-2), 195-213. 
+o	Gao, B. C. (1996). NDWI—A normalized difference water index for remote sensing of vegetation liquid water from space. Remote Sensing of Environment, 58(3), 257-266.  
+
+o	Anderson, M. C., Norman, J. M., Kustas, W. P., Houborg, R., Starks, P. J., & Agnellus, C. (2013). Mapping daily evapotranspiration at field to continental scales using geostationary and polar orbiting satellite imagery. Hydrology and Earth System Sciences, 17(6), 2451-2469. 
+o	Anderson, M. C., Hain, C. R., Karnieli, A., Goetz, S. J.,лое, B. F., Kustas, W. P., ... & White, W. A. (2011). Evaluation of drought indices based on thermal remote sensing and мультисенсорные data. Remote Sensing of Environment, 115(10), 2655-2669. 
+
+o	Kogan, F. N. (1995). Application of AVHRR in large-area drought monitoring. Remote Sensing of Environment, 51(1), 103-115. 
+
+o	Svoboda, M., LeComte, D., Hayes, M., Gleason, K., Heim, R., предательство, T., ... & Rippey, B. (2002). The drought monitor. Bulletin of the American Meteorological Society, 83(8), 1181-1190. 
 
 
 
   
-## Standardized Precipitation Index (SPI)
-
-This indicator measures anomalies of accumulated precipitation during a given period (e.g. 1, 3, 12 months), and is the most commonly used indicator for detecting and characterizing meteorological droughts.
-
-## Soil Moisture Anomaly (SMA)
-
-This indicator measures anomalies of daily soil moisture (water) content, and is used to measure the start and duration of agricultural drought conditions.
-
-## Combined Drought Indicator (CDI)
-
-This indicator integrates information on anomalies of precipitation, soil moisture and satellite-measured vegetation condition, into a single index that is used to monitor both the onset of agricultural drought and its evolution in time and space.
-
-## Anomaly of Vegetation Condition (FAPAR Anomaly)
-This indicator measures anomalies of satellite-measured FAPAR (Fraction of Absorbed Photosynthetically Active Radiation), and is used to highlight areas of relative vegetation stress due to agricultural drought
 </details>
