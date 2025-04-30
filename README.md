@@ -360,26 +360,24 @@ Documenting the datasets and packages is part of the project’s activities. The
 |     3|  NASA power   |             |             |           |                  |                |             |               |          |      |      |         |     |
 |     4|  Agri-food    | Gardian-CGIAR         |             |           |                  |                |             |               | Agri-food data |      |  [Link](https://documenter.getpostman.com/view/15684001/2s9YBz3ajj) ; [Link](https://gardian.cgiar.org/api)   |         | [Link](https://gardian.cgiar.org/maps/)    |
 
-<details>
-<summary> For User Engagement </summary>
-
-| PERSONA | STAKEHOLDER  | CONTACT     | EMAIL       | DATE      | REGION           | INTERV.        | STATUS      | COMMENTS      |  
-|---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|
-| Scientist | AIMS RIC   | Dr. Mouhamadou Bamba Sylla| msylla@aimsric.org| Rwanda   |                  |                |             |               |     
-| Policy Advisor  | Agrimet             |             |             |           |                  |                |             |               |   
-| Policy Advisor   | ICPAC  |             |             |           |                  |                |             |               |   
-| Policy Advisor|  Met service   | Dr. Vedaste Iyakaremye|viyakaremye@meteorwanda.gov.rw| Rwanda |                  |                |             |               |    
-| Policy Advisor   | RICA  | Dr. Magnifique Ndambe Nzaramba | mnzaramba@rica.rw| Rwanda| | | | |
-| Policy Advisor    | RAB | | | | | | | |
-| Policy Advisor    | REMA|David Ukwishaka |dukwishaka@rema.gov.rw | Rwanda | | | | |
-| Policy Advisor  | GIZ | Olivier Niyompuhwe | olivier.niyompuhwe@giz.de | Rwanda | | | | |
-| Policy Advisor   | SADEC| | | | | | | |
-
-</details>
-
 
 <details>
 <summary> Existing Climate Data Tools </summary>
+
+## 1. Climate Data Tool (CDT)
+
+| Feature                     | Description     | Link                               |
+|----------------------------:|-----------------|------------------------------------|
+| **Name**                    | Climate Data Tool (CDT)              | [IRI Climate Data Tool Website](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
+| **Developer**               | International Research Institute for Climate and Society (IRI) | [IRI Website](https://iri.columbia.edu/)  |
+| **License**                 | Free and Open Source  | [CDT Download/Information (likely contains license details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
+| **Primary Purpose** | Climate data management, quality control, analysis, and visualization, primarily for developing countries.  | [IRI Climate Data Tool Overview](http://iridl.ldeo.columbia.edu/maproom/CDT/Overview.html) |
+| **Key Functionalities** | Data organization, QC, merging, extraction, statistical analysis, climatologies, anomalies, rainfall analysis, extremes, visualization. | [CDT Modules and Features](http://iridl.ldeo.columbia.edu/maproom/CDT/Documentation.html) |
+| **User Interface** | Graphical User Interface (GUI) built on R   | [CDT Documentation (likely includes UI details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
+| **Programming Language** | R      | [The R Project for Statistical Computing](https://www.r-project.org/) |
+| **Relevance** | Benchmarking, inspiration for features, understanding the existing ecosystem.   |   -         |
+
+## 1. Climate Data Tool (CDT)
 
 | Name    | Source       | Used for    | Package     | Data format| Output      | Rainy season Char. | Climate Extr. indices | Drought indices      | Available | Issues |
 |---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|---------------|------------|
