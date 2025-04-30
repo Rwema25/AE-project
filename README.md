@@ -3,6 +3,157 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 
 Documenting the datasets and packages is part of the project’s activities. The table below provides details on the datasets mentioned during user engagement interviews. 
 
+# 1. Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS)
+
+## Overview
+
+| Attribute                  | Description            |
+| :------------------------- | :--------------------- |
+| **Short Description**      | CHIRPS is a 35+ year quasi-global rainfall dataset blending satellite imagery and station data for high-resolution precipitation information. |
+| **Provider/Source**        | Climate Hazards Center (CHC), University of California, Santa Barbara (UCSB) |
+| **Homepage/Link**          | [https://www.chc.ucsb.edu/data/chirps](https://www.chc.ucsb.edu/data/chirps)   |
+| **License/Terms of Use**   | Generally open for research and non-commercial use; verify specific terms on the CHC website for attribution requirements. |
+| **Spatial Coverage**       | Quasi-global, 50°S to 50°N latitude, 180°W to 180°E longitude    |
+| **Temporal Coverage**      | January 1, 1981, to near-present (updated frequently)           |
+| **Spatial Resolution**     | 0.05° x 0.05° latitude/longitude (approximately 5 km x 5 km at the equator) |
+| **Temporal Resolution**    | Daily, pentadal (5-day totals), dekadal (10-day totals), monthly aggregations  |
+| **Key Variables**          | Precipitation (mm)   |
+
+## Data Access and Format
+
+| Attribute                      | Description                            |
+| :----------------------------- | :------------------------------------- |
+| **Access Methods** | Download via FTP/HTTP (CHC website), FEWS NET Data Portal, Google Earth Engine (GEE), potential intermediary APIs. |
+| **Data Formats** | Primarily NetCDF (.nc), potentially GeoTIFF (.tif) for some derived products.  |
+| **Data Organization** | By temporal resolution (daily, monthly, etc.), then by year within each resolution. NetCDF files contain multi-dimensional arrays (time, latitude, longitude, variable).  |
+| **Potential Challenges** | Large file sizes, need for specific software libraries (e.g., `netCDF4`, `xarray`), potential missing data (handle fill values), awareness of data update frequency.  |
+
+## Technical Details 
+
+| Attribute                       | Description                                                    |
+| :------------------------------ | :------------------------------------------------------------- |
+| **File Naming Conventions**     | Typically includes product name (`chirps`), temporal resolution (`v2.0.daily`), year, and sometimes day or month (e.g., `chirps-v2.0.daily.1981.01.01.nc`). Consult the CHC website for precise conventions for each temporal resolution.   |
+| **Variable Names & Units** | Primary variable is usually `precip` (precipitation) with units of millimeters (`mm`). Verify metadata within the NetCDF files.  |
+| **Coordinate Systems** | Latitude and longitude based on World Geodetic System 1984 (WGS 84) datum. Coordinate variables are typically named `lat` and `lon`. |
+| **Data Processing** | Use libraries like `xarray`, `rioxarray`, `netCDF4` (Python) or `raster` (R) for NetCDF handling. Correctly handle latitude/longitude coordinates and the time dimension. Be aware of and manage missing data flags. Consider the need for data aggregation or resampling.   |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                                                           |
+| :------------------------------ | :-------------------------------------------------------------------- |
+| **Potential Applications** | Rainfall pattern analysis, drought monitoring, extreme precipitation event analysis, climate risk assessment, crop yield modeling, water resource management, agroclimatic zoning, validation of local climate data.   |
+| **Strengths for AE Research** | High spatial resolution for localized analysis, long temporal coverage for trend analysis, quasi-global coverage for broad studies, integration of satellite and station data for spatial completeness and accuracy. |
+| **Limitations for AE Research** | Indirect satellite measurements with potential biases, does not include other crucial variables (temperature, solar radiation, etc.), spatial resolution might still be coarse for very localized microclimatic studies.  |
+
+## Further Resources
+
+| Resource Type             | Description/Link                                                       |
+| :------------------------ | :--------------------------------------------------------------------- |
+| **Publications** | Search Google Scholar or academic databases for "CHIRPS rainfall." Key publications are often from the Climate Hazards Center at UCSB. |
+| **User Guides/Documentation** | Primary source is the CHC website: [https://www.chc.ucsb.edu/data/chirps](https://www.chc.ucsb.edu/data/chirps). Look for sections like "Documentation" or "About CHIRPS."     |
+| **Community/Support** | No dedicated CHIRPS forum is likely. General remote sensing or climate data forums might have discussions. Contact the Climate Hazards Center directly for specific support inquiries via their website.       |
+
+# 2. ERA5: ECMWF Reanalysis v5
+
+## Overview
+
+| Attribute                  | Description                             |
+| :------------------------- | :-------------------------------------- |
+| **Short Description** | ERA5 is the fifth generation ECMWF atmospheric reanalysis of the global climate, providing hourly estimates for a large number of atmospheric, land, and ocean climate variables.   |
+| **Provider/Source** | European Centre for Medium-Range Weather Forecasts (ECMWF) |
+| **Homepage/Link** | [https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5](https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5) |
+| **License/Terms of Use** | Copernicus license. Registration with the Copernicus Data Space Ecosystem (CDSE) is required. See: [https://cds.climate.copernicus.eu/terms-and-conditions](https://cds.climate.copernicus.eu/terms-and-conditions).  |
+| **Spatial Coverage** | Global         |
+| **Temporal Coverage** | 1950 to near-present (updated daily)      |
+| **Spatial Resolution** | 0.25° x 0.25° latitude/longitude (approximately 31 km x 31 km at the equator) for atmospheric variables. Other variables may have different resolutions.    |
+| **Temporal Resolution** | Hourly. Monthly means are also available.  |
+| **Key Variables** | Air temperature (various levels), precipitation (total, convective, large-scale), surface radiation (solar, thermal), wind speed and direction (various levels), soil moisture, evaporation, sea surface temperature, sea ice, and many more.   |
+
+## Data Access and Format
+
+| Attribute                      | Description                                           |
+| :----------------------------- | :---------------------------------------------------- |
+| **Access Methods** | Copernicus Data Space Ecosystem (CDSE) via Web Interface and CDS API (Python), ECMWF Data Catalogue (MARS), Cloud Platforms (AWS, GCP, Azure). CDSE is the recommended primary access point.   |
+| **Data Formats** | Primarily GRIB (GRIdded Binary). Can be converted to other formats like NetCDF.   |
+| **Data Organization** | By variable, by time (hourly/monthly), often separated by year. GRIB files contain gridded data with metadata. |
+| **Potential Challenges** | Registration required, large dataset volume, GRIB format (requires specific libraries), vast number of variables (careful selection needed), potentially high computational demands for analysis. |
+
+## Technical Details 
+
+| Attribute                       | Description                                      |
+| :------------------------------ | :----------------------------------------------- |
+| **File Naming Conventions** | GRIB file names vary depending on the download method from CDSE. Typically include variable name, date, time, and other metadata. Refer to file metadata.       |
+| **Variable Names & Units** | Variable names in GRIB are often abbreviated (ECMWF conventions). Units are in the metadata. Consult ECMWF/CDSE documentation.  |
+| **Coordinate Systems** | Typically regular latitude-longitude grid. Projection and datum info in GRIB metadata.  |
+| **Data Processing** | Use libraries like `cfgrib` or `eccodes` (Python) for GRIB. Explore CDS API for efficient download. Consider conversion to NetCDF. Implement spatial and temporal subsetting. Be mindful of unit conversions.   |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                                     |
+| :------------------------------ | :---------------------------------------------- |
+| **Potential Applications** | Temperature analysis (growing degree days, frost risk, heat stress), precipitation analysis (drought monitoring, variability), evapotranspiration estimation, solar radiation assessment, wind patterns, soil moisture monitoring, extreme weather event analysis, climate change impact studies. |
+| **Strengths for AE Research** | Comprehensive variable set, long temporal coverage (since 1950), global coverage, hourly resolution allows for detailed analysis, continuously updated.|
+| **Limitations for AE Research** | Coarser spatial resolution than CHIRPS (may miss localized variations), reanalysis data (model-based with inherent uncertainties), complexity of access and format, potentially high computational demands.   |
+
+## Further Resources
+
+| Resource Type             | Description/Link                                     |
+| :------------------------ | :--------------------------------------------------- |
+| **Publications** | Search Google Scholar and the ECMWF website for ERA5 related publications.      |
+| **User Guides/Documentation** | ECMWF website: [https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5](https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5). Copernicus Data Space Ecosystem documentation: [https://cds.climate.copernicus.eu/cdsapp#!/documentation](https://cds.climate.copernicus.eu/cdsapp#!/documentation).    |
+| **Community/Support** | Copernicus Discourse forum: [https://community.copernicus.eu/](https://community.copernicus.eu/). ECMWF also provides support via their website. |
+
+# 3. AgERA5: Hourly Reanalysis Data for Agriculture
+
+## Overview
+
+| Attribute                  | Description                                                |
+| :------------------------- | :--------------------------------------------------------- |
+| **Short Description** | AgERA5 is a reanalysis dataset specifically tailored for agricultural applications, produced by the European Centre for Medium-Range Weather Forecasts (ECMWF) in collaboration with the Copernicus Climate Change Service (C3S). It is based on the ERA5 dataset but includes additional variables and adjustments relevant for agriculture. |
+| **Provider/Source** | European Centre for Medium-Range Weather Forecasts (ECMWF) / Copernicus Climate Change Service (C3S). |
+| **Homepage/Link to Dataset** | [https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/agera5](https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/agera5) (This is the main ECMWF page; specific access might be through the Copernicus Data Space Ecosystem).   |
+| **License and Terms of Use** | Likely the same as ERA5: Copernicus license. Registration with the Copernicus Data Space Ecosystem (CDSE) will be required. See: [https://cds.climate.copernicus.eu/terms-and-conditions](https://cds.climate.copernicus.eu/terms-and-conditions). |
+| **Spatial Coverage** | Global, consistent with ERA5.      |
+| **Temporal Coverage** | 1979 to near-present (updated daily with a delay).  |
+| **Resolution** | **Spatial:** 0.1° x 0.1° latitude/longitude (approximately 10 km x 10 km at the equator). This is a higher spatial resolution than standard ERA5. <br>**Temporal:** Hourly.     |
+| **Key Variables** | Includes all standard ERA5 variables, plus additional and enhanced variables relevant for agriculture, such as: <br> - Evapotranspiration (potential, actual) <br> - Soil water content (at various levels) <br> - Leaf area index (LAI) <br> - Fraction of absorbed photosynthetically active radiation (FAPAR) <br> - Crop-specific indicators (may       |
+
+## Data Access and Format
+
+| Attribute                      | Description                                           |
+| :----------------------------- | :---------------------------------------------------- |
+| **Access Methods**             | Primarily through the Copernicus Data Space Ecosystem (CDSE) via the Web Interface and CDS API (Python). It might also be accessible through other platforms that host Copernicus data. Check the AgERA5 ECMWF page and the CDSE catalogue for the most up-to-date access methods.  |
+| **Data Formats** | Likely GRIB (GRIdded Binary) format, consistent with ERA5. Conversion to other formats like NetCDF will likely be supported through CDSE tools or other software.  |
+| **Data Organization** | Similar to ERA5: organized by variable, by time (hourly), and often separated by year. GRIB files contain the gridded data and associated metadata. The specific organization might differ slightly due to the additional agricultural variables. Consult the CDSE documentation.    |
+| **Potential Challenges** | Registration with CDSE required, potentially large dataset volume (though higher resolution might mean larger files than standard ERA5 for the same area), GRIB format (requires specific libraries), understanding the specific agricultural variables and their units (refer to documentation), computational resources for analysis.  |
+
+## Technical Details 
+
+| Attribute                       | Description                                          |
+| :------------------------------ | :--------------------------------------------------- |
+| **File Naming Conventions** | Likely similar to ERA5 GRIB files but will include indicators for the AgERA5 product and the specific agricultural variables. Consult the CDSE catalogue and the metadata within the downloaded files for precise naming conventions.     |
+| **Variable Names & Units** | Will include standard ERA5 variable names as well as specific names for the agricultural variables (e.g., `e`, `swvl1`, `lai`, `fapar`). Units will be specified in the GRIB metadata. Refer to the ECMWF and CDSE documentation for the definitions and units of the AgERA5 specific variables.  |
+| **Coordinate Systems** | Likely the same regular latitude-longitude grid as ERA5 (WGS 84), but at the higher 0.1° resolution. Coordinate information will be in the GRIB metadata.       |
+| **Data Processing** | Use GRIB decoding libraries (`cfgrib`, `eccodes` in Python). Utilize the CDS API for efficient data access. Consider converting to NetCDF for easier manipulation with libraries like `xarray`. Pay close attention to the specific units and definitions of the agricultural variables. Implement spatial and temporal subsetting to manage data volume.     |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                                        |
+| :------------------------------ | :------------------------------------------------- |
+| **Potential Applications** | Crop yield forecasting, irrigation management, pest and disease modeling, assessment of land suitability for different crops, drought and heat stress monitoring specific to agriculture, analysis of vegetation dynamics (LAI, FAPAR), water resource management in agricultural contexts, climate change impact assessments on agriculture, soil moisture studies for plant growth.                   |
+| **Strengths for AE Research** | **Higher spatial resolution (0.1°)** compared to standard ERA5, providing more detailed information for agricultural landscapes. Includes **agriculture-specific variables** like evapotranspiration, soil water at multiple levels, LAI, and FAPAR, which are directly relevant to agroecological studies. Long temporal coverage (since 1979) for historical analysis. Hourly resolution for capturing diurnal variations important for plant processes. Globally consistent dataset for comparative studies.      |
+| **Limitations for AE Research** | Reanalysis data (model-based with inherent uncertainties, potentially biases that might be different from standard ERA5). Still might not capture very localized microclimatic variations relevant for small farms. Requires registration and familiarity with the CDSE and potentially GRIB format. Can be computationally demanding to process large volumes of high-resolution data. Understanding the specific definitions and limitations of the agricultural variables is crucial.|
+
+## Further Resources
+
+| Resource Type             | Description/Link                                        |
+| :-------------------------- | :---------------------------------------------------- |
+| **Publications** | Search Google Scholar and the ECMWF website specifically for "AgERA5" related publications and documentation. Look for scientific reports and validation studies.  |
+| **User Guides/Documentation** | The main ECMWF AgERA5 page: [https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/agera5](https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/agera5). The Copernicus Data Space Ecosystem documentation ([https://cds.climate.copernicus.eu/cdsapp#!/documentation](https://cds.climate.copernicus.eu/cdsapp#!/documentation)) will also be crucial for access and understanding the data. Look for sections specifically mentioning AgERA5.   |
+| **Community/Support** | The Copernicus Discourse forum ([https://community.copernicus.eu/](https://community.copernicus.eu/)) is the recommended platform for questions and discussions related to Copernicus datasets, including AgERA5. ECMWF support channels might also be relevant.    |
+
+
+
 
 | Rank | Dataset name  | Data source | Data format | Data type | Temp. resolution | Temp. coverage | Update freq | H. resolution | Variable | Perm | APIs | Package | Doc | 
 |-----:|---------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|----------|------|------|---------|-----|
