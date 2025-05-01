@@ -388,7 +388,27 @@ Documenting the datasets and packages is part of the project’s activities. The
 
 
 <details>
-<summary> Indicators </summary>
+  <summary> Key Climate Indicators of Stress </summary>
+
+#  I.	Direct Environmental Indicators: 
+These are measurements of the climatic factors themselves and their deviations from the norm. This section helps to gain a better understanding of the climatic stresses affecting crop production in a given area and makes informed decisions to mitigate potential negative impacts. It provides definitions, calculation methods, formulas, and relevant R and Python packages:
+
+## I. Temperature Extremes
+## Definition of Terms
+|Term       |	Definition   |
+|-----------|--------------|
+|Daily Maximum Temperature (Tmax)	|The highest temperature recorded within a 24-hour period (typically from midnight to midnight local time).|
+|Daily Minimum Temperature (Tmin) |	The lowest temperature recorded within a 24-hour period.|
+|Heatwave	| A prolonged period of abnormally hot weather, often defined based on local climatological conditions (e.g., a certain number of consecutive days exceeding a specific temperature threshold). The threshold and duration can vary.|
+|Hot Day |	A day when the daily maximum temperature exceeds a specific threshold (e.g., 30°C, 35°C, or a percentile of historical data).|
+|Hot Night	|A night when the daily minimum temperature exceeds a specific threshold (e.g., 20°C, 25°C, or a percentile of historical data).|
+|Frost Day |	A day when the daily minimum temperature falls below 0°C.|
+
+</details>
+
+
+<details>
+<summary> Drought Indices </summary>
   
 # Drought Indicators and Indices
 
