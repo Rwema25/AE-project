@@ -1,7 +1,10 @@
 # AE-project
 The “Advancing Climate Data Integration in Agroecological Research” project, aims to improve the capacity of agroecological researchers and practitioners to integrate climate data into their work.
 
-Documenting the datasets and packages is part of the project’s activities. The table below provides details on the datasets mentioned during user engagement interviews. 
+<details>
+  <summary> Climate datasets documentation </summary>
+
+  Documenting the datasets and packages is part of the project’s activities. The table below provides details on the datasets mentioned during user engagement interviews. 
 
 # 1. Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS)
 
@@ -350,15 +353,8 @@ Documenting the datasets and packages is part of the project’s activities. The
 | **Publications** | The NASA POWER website ([https://power.larc.nasa.gov/](https://power.larc.nasa.gov/)) usually lists relevant publications and citations related to the dataset and its methodology.  |
 | **User Guides/Documentation** | The "Documentation" or "About" sections on the NASA POWER website are comprehensive resources, providing details on the available datasets, parameters, temporal coverage, spatial resolution, data access methods (web interface and API), and data formats. The API documentation is particularly important for developers.     |
 | **Community/Support** | The NASA POWER website may provide contact information for questions or support. You might also find discussions or examples of using POWER data in online forums related to remote sensing, renewable energy, or agricultural modeling.   |
+</details>
 
-
-
-| Rank | Dataset name  | Data source | Data format | Data type | Temp. resolution | Temp. coverage | Update freq | H. resolution | Variable | Perm | APIs | Package | Doc | 
-|-----:|---------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|----------|------|------|---------|-----|
-|     1|  ERA5         | ECMWF       | GRIB        | Gridded   | Hourly           | 1940 to present| Daily       | 0.25 x 0.25 degrees for the reanalysis              | Total precipitation, Sea surface temperature,...         | Register/ create account      | [Link](https://cds.climate.copernicus.eu/how-to-api)     | cdsapi (Python)  | [Link](https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation)    |
-|     2|  CHIRPS       | Climate Hazards Group at the University of California, Santa Barbara | NetCDF, TIFF, BIL, PNG  | Gridded       |   Daily to annual time intervals| 1981 to near-real time  | April 2015 | 0.05 x 0.05 degrees  | precipitation |      |  [Link](https://data.chc.ucsb.edu/products/CHIRPS-2.0/africa_daily/tifs/p05/)    |         | [Link](https://data.chc.ucsb.edu/products/CHIRPS-2.0/README-CHIRPS.txt)    |
-|     3|  NASA power   |             |             |           |                  |                |             |               |          |      |      |         |     |
-|     4|  Agri-food    | Gardian-CGIAR         |             |           |                  |                |             |               | Agri-food data |      |  [Link](https://documenter.getpostman.com/view/15684001/2s9YBz3ajj) ; [Link](https://gardian.cgiar.org/api)   |         | [Link](https://gardian.cgiar.org/maps/)    |
 
 
 <details>
@@ -376,14 +372,6 @@ Documenting the datasets and packages is part of the project’s activities. The
 | **User Interface** | Graphical User Interface (GUI) built on R   | [CDT Documentation (likely includes UI details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
 | **Programming Language** | R      | [The R Project for Statistical Computing](https://www.r-project.org/) |
 | **Relevance** | Benchmarking, inspiration for features, understanding the existing ecosystem.   |   -         |
-
-## 1. Climate Data Tool (CDT)
-
-| Name    | Source       | Used for    | Package     | Data format| Output      | Rainy season Char. | Climate Extr. indices | Drought indices      | Available | Issues |
-|---------|--------------|-------------|-------------|-----------|------------------|----------------|-------------|---------------|---------------|------------|
-| CDT     | International Research Institute for Climate and Society   |Data preparation, Quality control, Gridding, Validation, Analysis, Visualization | CDT (in R)| Csv, NetCDF   | Data, Maps, Time series    | Onset, Cessation, Season Length               | Precipitation, temperature    | SPI, SPEI, Deciles | GitHub: [Link](https://github.com/rijaf-iri/CDT) | GitHub: [Link](https://github.com/rijaf-iri/CDT/issues/1) |
-| East Africa Drought Watch||||||||SPI, SMA, CDI, FAPAR Anomaly||[Link](https://droughtwatch.icpac.net/report-v2/?qstr=eyJwYXJhbXMiOnsicmVwb3J0aW5nX3VuaXQiOiJFYXN0IEFmcmljYSBSZWdpb24iLCJhZG1pbl9sZXZlbCI6bnVsbCwidW5pdF9pZCI6bnVsbCwicGFfaWQiOm51bGwsInBsYWNlbmFtZSI6IkVhc3QgQWZyaWNhIFJlZ2lvbiIsInBlcmlvZF9jeWNsZSI6IkRla2FkYWwiLCJkYXRhX2RhdGUiOiIyMDE4LTAxLTIxIiwic21hX2RhdGFfZGF0ZSI6IjIwMTgtMDEtMTEiLCJmYXBhbl9kYXRhX2RhdGUiOiIyMDE4LTAxLTIxIiwic3BpX2RhdGFfZGF0ZSI6IjIwMTgtMDEtMDEiLCJ0aW1lc2NhbGUiOm51bGwsInByb2plY3RfbmFtZSI6bnVsbCwicmVzdG9yZV9wZGYiOmZhbHNlfSwic2hhcmUiOnsib3BlbiI6ZmFsc2UsImNvcGllZCI6ZmFsc2UsInRpbnlfdXJsIjpudWxsfSwic2VsZWN0ZWQiOnsiZGF0YV9kYXRlIjoiMjAxOC0wMS0yMSIsInBlcmlvZF9jeWNsZSI6IkRla2FkYWwiLCJ0aW1lc2NhbGUiOm51bGwsInJlc3RvcmVfcGRmIjpmYWxzZX0sImV4cG9ydCI6eyJwZGYiOnsibG9hZGluZyI6ZmFsc2UsImVycm9yIjpudWxsfX19)|
-|EDACaP| | agroclimate information and advisory |  | | | | | |[Link](https://edacap.ethioagroclimate.net/#/Home) | |
 </details>
 
 
@@ -394,7 +382,7 @@ Documenting the datasets and packages is part of the project’s activities. The
 These are measurements of the climatic factors themselves and their deviations from the norm. This section helps to gain a better understanding of the climatic stresses affecting crop production in a given area and makes informed decisions to mitigate potential negative impacts. It provides definitions, calculation methods, formulas, and relevant R and Python packages:
 
 ## I. Temperature Extremes
-## Definition of Terms
+### Definition of Terms
 |Term       |	Definition   |
 |-----------|--------------|
 |Daily Maximum Temperature (Tmax)	|The highest temperature recorded within a 24-hour period (typically from midnight to midnight local time).|
@@ -403,6 +391,148 @@ These are measurements of the climatic factors themselves and their deviations f
 |Hot Day |	A day when the daily maximum temperature exceeds a specific threshold (e.g., 30°C, 35°C, or a percentile of historical data).|
 |Hot Night	|A night when the daily minimum temperature exceeds a specific threshold (e.g., 20°C, 25°C, or a percentile of historical data).|
 |Frost Day |	A day when the daily minimum temperature falls below 0°C.|
+
+## Calculation Methods and Formulas
+These indicators are typically calculated from daily temperature data (Tmax and Tmin).
+
+
+| Indicator | Calculation Method & Formula | 
+|------------|----------------------------------------|
+| **Heatwave** | <br>  **Method 1 (Absolute Threshold):** Identify periods where Tmax exceeds a fixed threshold (e.g., 32°C) for a minimum number of consecutive days (e.g., 3 days) <br>  **Method 2 (Percentile-Based Threshold):** Calculate a percentile (e.g., 90th percentile) of historical Tmax for a specific period. A heatwave occurs when Tmax exceeds this percentile for a certain number of consecutive days.|
+| **Number of Hot Days** | Count the number of days within a specific period (e.g., growing season, year) where Tmax > Threshold_Hot_Day.|
+| **Number of Hot Nights** | Count the number of days within a specific period where Tmin > Threshold_Hot_Night.|
+| **Number of Frost Days** | Count the number of days within a specific period where Tmin < 0°C.|
+
+## R Packages:
+
+| Packages | Description | 
+|------------|----------------------------------------|
+| `tidyverse` | For data manipulation and filtering.|
+|`dplyr` | Part of `tidyverse`, excellent for filtering days based on temperature thresholds.|
+| `climatol` | Specifically designed for climatological analysis, can calculate percentile-based heatwaves and other climate indices. |
+| `RClimDex` | Provides functions to calculate a suite of extreme climate indices recommended by the Expert Team on Climate Change Detection and Indices (ETCCDI). This includes heatwave duration index, number of hot days, etc.|
+
+```R
+# The R code below performs a basic analysis of simulated daily temperature data. It calculates the number of hot days (Tmax > 30°C), frost days (Tmin < 0°C), and a simplified measure of heatwave days (Tmax > 32°C for at least 3 consecutive days).
+
+library(dplyr)
+
+# Example data frame with daily Tmax and Tmin
+climate_data <- data.frame(
+  date = seq(as.Date("2024-01-01"), as.Date("2024-12-31"), by = "day"),
+  tmax = runif(366, 15, 40),
+  tmin = runif(366, 5, 25)
+)
+
+# Number of hot days (threshold > 30°C)
+hot_days <- climate_data %>% filter(tmax > 30) %>% nrow()
+print(paste("Number of hot days:", hot_days))
+
+# Number of frost days (threshold < 0°C)
+frost_days <- climate_data %>% filter(tmin < 0) %>% nrow()
+print(paste("Number of frost days:", frost_days))
+
+# Identifying heatwaves (Tmax > 32°C for 3 consecutive days - simplified)
+climate_data <- climate_data %>%
+  mutate(hot_day = ifelse(tmax > 32, 1, 0)) %>%
+  mutate(consecutive_hot = ave(hot_day, cumsum(hot_day == 0), FUN = cumsum))
+heatwave_days <- climate_data %>% filter(consecutive_hot >= 3) %>% nrow()
+print(paste("Number of heatwave days (simplified):", heatwave_days))
+
+```
+## Python Packages:
+
+| Packages | Description | 
+|------------|----------------------------------------|
+| `pandas` | For data manipulation and filtering.|
+| `numpy` | For numerical operations. |
+| `xarray` | For working with multi-dimensional climate data (often in NetCDF format). |
+| `rioxarray` |Extends `xarray` for geospatial raster data. |
+| `climopy` | A Python package specifically designed for climate analysis, including the calculation of various climate indices. |
+| `ecopy` | Another Python package with some functions for ecological and climate data analysis. |
+
+
+```python
+import pandas as pd
+import numpy as np
+
+# Example DataFrame with daily Tmax and Tmin
+dates = pd.to_datetime(pd.date_range('2024-01-01', '2024-12-31', freq='D'))
+climate_data = pd.DataFrame({
+    'date': dates,
+    'tmax': np.random.uniform(15, 40, len(dates)),
+    'tmin': np.random.uniform(5, 25, len(dates))
+})
+
+# Number of hot days (threshold > 30°C)
+hot_days = len(climate_data[climate_data['tmax'] > 30])
+print(f"Number of hot days: {hot_days}")
+
+# Number of frost days (threshold < 0°C)
+frost_days = len(climate_data[climate_data['tmin'] < 0])
+print(f"Number of frost days: {frost_days}")
+
+# Identifying heatwaves (Tmax > 32°C for 3 consecutive days - simplified)
+climate_data['hot_day'] = (climate_data['tmax'] > 32).astype(int)
+climate_data['consecutive_hot'] = (climate_data['hot_day']
+                                   .groupby((climate_data['hot_day'] == 0).cumsum())
+                                   .cumsum())
+heatwave_days = len(climate_data[climate_data['consecutive_hot'] >= 3])
+print(f"Number of heatwave days (simplified): {heatwave_days}")
+
+```
+
+## II. Precipitation Anomalies
+
+### Definition of Terms
+
+|Term       |	Definition   |
+|-----------|--------------|
+|Daily Precipitation | The amount of rainfall recorded in a 24-hour period (typically in millimeters or inches).|
+|Dry Spell | A period of consecutive days with rainfall below a certain threshold (e.g., < 1 mm per day). The duration can vary (e.g., 5, 10, or more consecutive dry days). |
+|Season Rainfall Amount | The total amount of rainfall received during a defined rainy season. |
+|Rain Season Duration | The length of the rainy season, often defined by the onset and cessation dates.|
+|Onset of the Rainy Season | The start date of the rainy season, often determined based on specific criteria involving cumulative rainfall over a short period after a certain date or a sequence of wet days. Various methodologies exist (e.g., simple threshold, moving average). |
+|Cessation of the Rainy Season | The end date of the rainy season, often determined by criteria involving a prolonged dry spell after a certain date or a sequence of dry days. |
+|Intensity of Rainfall Events | Measures like maximum daily rainfall, the number of heavy rainfall days (exceeding a certain threshold), or the Simple Daily Intensity Index (SDII - average rainfall on wet days). |
+
+## Calculation Methods and Formulas
+These indicators are calculated from daily precipitation data.
+
+
+| Indicator | Calculation Method & Formula | 
+|------------|----------------------------------------|
+|	Dry Spell| Identify consecutive days where daily precipitation < Threshold_Dry_Day (e.g., 1 mm). The length of the dry spell is the number of such consecutive days. |
+|	Season Rainfall Amount | Sum of daily precipitation within the defined rainy season (from onset to cessation). $$SeasonRainfall = \sum_{onset}^{cessation} Precipitation_t$$|
+|	Rain Season Duration| Number of days between the onset and cessation dates (inclusive). $$Duration = CessationDate − OnsetDate + 1$$ |
+|	Onset of the Rainy Season (Example Method - Simple Threshold) | After a specific date (e.g., a climatological start of the season), look for a period of, say, 3 consecutive days with a total rainfall of at least 20 mm, with at least one day receiving more than 10 mm. |
+|	Cessation of the Rainy Season (Example Method - Fixed Date after Last Significant Rainfall)| <br>  1.	Identify the last significant rainfall event (e.g., > 10 mm) <br> 2.	The cessation might be defined as a fixed number of days after this event, or when a prolonged dry spell begins. |
+|	Intensity of Rainfall Events| <br> **1.	Maximum Daily Rainfall:** The highest daily precipitation value within a period <br> **2.	Number of Heavy Rainfall Days:** Count the number of days within a period where daily precipitation > Threshold_Heavy_Rain (e.g., 10 mm, 20 mm) <br> **3. Simple Daily Intensity Index (SDII):** Sum of daily precipitation on wet days (precipitation ≥ 1 mm) divided by the number of wet days in the period. $$SDII = \frac{\sum_{i=1}^{n} PR_i}{n_{wet}}$$ where $PR_i$ is daily precipitation on wet days, and $n_{wet}$ is the number of wet days. |
+
+## R Packages:
+
+| Packages | Description | 
+|------------|----------------------------------------|
+|	`tidyverse` | For data manipulation and filtering. |
+|	`dplyr` | For filtering days based on precipitation thresholds. |
+|	`rclimdex` | Can calculate indices related to precipitation extremes (e.g., consecutive dry days, heavy precipitation days). |
+|	`SPEI` | Specifically designed to calculate the Standardized Precipitation-Evapotranspiration Index (SPEI) and also includes functionality for SPI calculation. |
+|	`hydroTSM` | Provides functions for time series analysis in hydrology, which can be useful for analyzing precipitation patterns and identifying dry spells. |
+|	`rainmaker` | Focuses on rainfall analysis, including onset and cessation of rainy seasons. |
+
+## Python Packages:
+
+| Packages | Description | 
+|------------|----------------------------------------|
+|	`pandas` | For data manipulation and filtering. |
+|	`numpy` | For numerical operations. |
+|	`xarray` | For working with multi-dimensional climate data. |
+|	`rioxarray` | For geospatial raster data. | 
+|	`scipy.stats` | For statistical distributions needed for SPI calculation (e.g., `gamma`). |
+|	`pySPI` | A dedicated Python package for calculating the Standardized Precipitation Index (SPI). | 
+|	`climatools` | A Python library with various climate analysis functions, potentially including precipitation-related indices. |
+|	`esmtools` | A library for Earth System Model analysis, which might contain relevant functions for precipitation analysis. |
+
 
 </details>
 
