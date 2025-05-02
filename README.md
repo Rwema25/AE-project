@@ -15,7 +15,7 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | **Short Description**      | CHIRPS is a 35+ year quasi-global rainfall dataset blending satellite imagery and station data for high-resolution precipitation information. |
 | **Provider/Source**        | Climate Hazards Center (CHC), University of California, Santa Barbara (UCSB) |
 | **Homepage/Link**          | [https://www.chc.ucsb.edu/data/chirps](https://www.chc.ucsb.edu/data/chirps)   |
-| **License/Terms of Use**   | Generally open for research and non-commercial use; verify specific terms on the CHC website for attribution requirements. |
+| **License/Terms of Use**   | Generally open for research and non-commercial use. |
 | **Spatial Coverage**       | Quasi-global, 50°S to 50°N latitude, 180°W to 180°E longitude    |
 | **Temporal Coverage**      | January 1, 1981, to near-present (updated frequently)           |
 | **Spatial Resolution**     | 0.05° x 0.05° latitude/longitude (approximately 5 km x 5 km at the equator) |
@@ -35,7 +35,7 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 
 | Attribute                       | Description                                                    |
 | :------------------------------ | :------------------------------------------------------------- |
-| **File Naming Conventions**     | Typically includes product name (`chirps`), temporal resolution (`v2.0.daily`), year, and sometimes day or month (e.g., `chirps-v2.0.daily.1981.01.01.nc`). Consult the CHC website for precise conventions for each temporal resolution.   |
+| **File Naming Conventions**     | Typically includes product name (`chirps`), temporal resolution (`v2.0.daily`), year, and sometimes day or month (e.g., `chirps-v2.0.daily.1981.01.01.nc`).  |
 | **Variable Names & Units** | Primary variable is usually `precip` (precipitation) with units of millimeters (`mm`). Verify metadata within the NetCDF files.  |
 | **Coordinate Systems** | Latitude and longitude based on World Geodetic System 1984 (WGS 84) datum. Coordinate variables are typically named `lat` and `lon`. |
 | **Data Processing** | Use libraries like `xarray`, `rioxarray`, `netCDF4` (Python) or `raster` (R) for NetCDF handling. Correctly handle latitude/longitude coordinates and the time dimension. Be aware of and manage missing data flags. Consider the need for data aggregation or resampling.   |
@@ -59,7 +59,6 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 
 | Resource Type             | Description/Link                                                       |
 | :------------------------ | :--------------------------------------------------------------------- |
-| **Publications** | Search Google Scholar or academic databases for "CHIRPS rainfall." Key publications are often from the Climate Hazards Center at UCSB. |
 | **User Guides/Documentation** | Primary source is the CHC website: [https://www.chc.ucsb.edu/data/chirps](https://www.chc.ucsb.edu/data/chirps). Look for sections like "Documentation" or "About CHIRPS."     |
 | **Community/Support** | No dedicated CHIRPS forum is likely. General remote sensing or climate data forums might have discussions. Contact the Climate Hazards Center directly for specific support inquiries via their website.       |
 
@@ -355,24 +354,6 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | **Community/Support** | The NASA POWER website may provide contact information for questions or support. You might also find discussions or examples of using POWER data in online forums related to remote sensing, renewable energy, or agricultural modeling.   |
 </details>
 
-
-
-<details>
-<summary> Existing Climate Data Tools </summary>
-
-## 1. Climate Data Tool (CDT)
-
-| Feature                     | Description     | Link                               |
-|----------------------------:|-----------------|------------------------------------|
-| **Name**                    | Climate Data Tool (CDT)              | [IRI Climate Data Tool Website](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
-| **Developer**               | International Research Institute for Climate and Society (IRI) | [IRI Website](https://iri.columbia.edu/)  |
-| **License**                 | Free and Open Source  | [CDT Download/Information (likely contains license details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
-| **Primary Purpose** | Climate data management, quality control, analysis, and visualization, primarily for developing countries.  | [IRI Climate Data Tool Overview](http://iridl.ldeo.columbia.edu/maproom/CDT/Overview.html) |
-| **Key Functionalities** | Data organization, QC, merging, extraction, statistical analysis, climatologies, anomalies, rainfall analysis, extremes, visualization. | [CDT Modules and Features](http://iridl.ldeo.columbia.edu/maproom/CDT/Documentation.html) |
-| **User Interface** | Graphical User Interface (GUI) built on R   | [CDT Documentation (likely includes UI details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
-| **Programming Language** | R      | [The R Project for Statistical Computing](https://www.r-project.org/) |
-| **Relevance** | Benchmarking, inspiration for features, understanding the existing ecosystem.   |   -         |
-</details>
 
 
 <details>
@@ -1334,8 +1315,24 @@ o	Anderson, M. C., Hain, C. R., Karnieli, A., Goetz, S. J.,лое, B. F., Kustas
 o	Kogan, F. N. (1995). Application of AVHRR in large-area drought monitoring. Remote Sensing of Environment, 51(1), 103-115. 
 
 o	Svoboda, M., LeComte, D., Hayes, M., Gleason, K., Heim, R., предательство, T., ... & Rippey, B. (2002). The drought monitor. Bulletin of the American Meteorological Society, 83(8), 1181-1190. 
-
-
-
-  
+ 
 </details>
+
+
+<details>
+<summary> Existing Climate Data Tools </summary>
+
+## 1. Climate Data Tool (CDT)
+
+| Feature                     | Description     | Link                               |
+|----------------------------:|-----------------|------------------------------------|
+| **Name**                    | Climate Data Tool (CDT)              | [IRI Climate Data Tool Website](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
+| **Developer**               | International Research Institute for Climate and Society (IRI) | [IRI Website](https://iri.columbia.edu/)  |
+| **License**                 | Free and Open Source  | [CDT Download/Information (likely contains license details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
+| **Primary Purpose** | Climate data management, quality control, analysis, and visualization, primarily for developing countries.  | [IRI Climate Data Tool Overview](http://iridl.ldeo.columbia.edu/maproom/CDT/Overview.html) |
+| **Key Functionalities** | Data organization, QC, merging, extraction, statistical analysis, climatologies, anomalies, rainfall analysis, extremes, visualization. | [CDT Modules and Features](http://iridl.ldeo.columbia.edu/maproom/CDT/Documentation.html) |
+| **User Interface** | Graphical User Interface (GUI) built on R   | [CDT Documentation (likely includes UI details)](http://iridl.ldeo.columbia.edu/maproom/CDT/) |
+| **Programming Language** | R      | [The R Project for Statistical Computing](https://www.r-project.org/) |
+| **Relevance** | Benchmarking, inspiration for features, understanding the existing ecosystem.   |   -         |
+</details>
+
