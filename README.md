@@ -103,7 +103,6 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | Yes (CDSE API)   | [CDSE API Documentation](https://www.google.com/search?q=https://cds.climate.copernicus.eu/cdsapp%23\!/documentation/api-how-to)                             | Register on CDSE, install `cdsapi` Python library, follow documentation for making requests.  |
 |                  | [CDSE Platform](https://cds.climate.copernicus.eu/)          |            |
 
-## AgERA5
 
 ## Relevance for Agroecological Research
 
@@ -352,7 +351,67 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | **Publications** | The NASA POWER website ([https://power.larc.nasa.gov/](https://power.larc.nasa.gov/)) usually lists relevant publications and citations related to the dataset and its methodology.  |
 | **User Guides/Documentation** | The "Documentation" or "About" sections on the NASA POWER website are comprehensive resources, providing details on the available datasets, parameters, temporal coverage, spatial resolution, data access methods (web interface and API), and data formats. The API documentation is particularly important for developers.     |
 | **Community/Support** | The NASA POWER website may provide contact information for questions or support. You might also find discussions or examples of using POWER data in online forums related to remote sensing, renewable energy, or agricultural modeling.   |
+
+# 7. Integrated Multi-satellitE Retrievals for GPM (IMERG)
+
+## Overview
+
+| Attribute           | Description                                                                               |
+|---------------------|-------------------------------------------------------------------------------------------|
+| Short Description   | IMERG is a NASA product estimating global surface precipitation rates by combining data from the GPM satellite constellation, including microwave, infrared, and gauge data.     |
+| Provider/Source     | NASA (National Aeronautics and Space Administration) / JAXA (Japan Aerospace Exploration Agency) as part of the Global Precipitation Measurement (GPM) mission.       |
+| Homepage/Link       | [GPM Website](https://gpm.nasa.gov/) and [GES DISC IMERG Page](https://disc.gsfc.nasa.gov/datasets?keywords=IMERG)        |
+| License/Terms of Use | Generally open for research and non-commercial use. Users should acknowledge NASA/JAXA/GPM in publications. See specific data access portals for detailed terms.      |
+| Spatial Coverage    | Quasi-global, 90°S to 90°N latitude, 180°W to 180°E longitude.     |
+| Temporal Coverage   | June 2000 to near-present (updated with a latency depending on the product: Early, Late, and Final Runs).    |
+| Spatial Resolution  | 0.1° x 0.1° latitude/longitude (approximately 10 km x 10 km at the equator).         |
+| Temporal Resolution | Half-hourly (30-minute), daily, and monthly aggregations available depending on the product (Early, Late, Final).   |
+| Key Variables       | Precipitation rate (mm/hr), accumulated precipitation (mm), and associated error estimates. Different runs (Early, Late, Final) offer varying latency and accuracy.   |
+
+## Data Access and Format
+
+| Attribute            | Description                                        |
+|----------------------|----------------------------------------------------|
+| Access Methods       | Download via NASA GES DISC (HTTP/FTP), potential access through облачные платформы like Google Earth Engine (GEE), and possibly through intermediary APIs or ERDDAP servers.    |
+| Data Formats         | Primarily NetCDF (.nc), sometimes available in GeoTIFF (.tif) for certain products or through specific portals. |
+| Data Organization    | By temporal resolution (half-hourly, daily, monthly), then by year and sometimes month. NetCDF files contain multi-dimensional arrays (time, latitude, longitude, variable). Different "Runs" (Early, Late, Final) are often organized as separate datasets. |
+| Potential Challenges | Large file sizes, especially for high temporal resolution data. Requires specific software libraries (e.g., `netCDF4`, `xarray`, `rioxarray` in Python) for handling. Be aware of the latency and accuracy differences between the Early, Late, and Final Runs. Potential missing data (handle fill values). |
+
+## Technical Details
+
+| Attribute                 | Description                                       |
+|---------------------------|---------------------------------------------------|
+| File Naming Conventions | Typically includes product name (e.g., 3B-HHR, 3B-DAY), version number (e.g., V06, V07), date (YYYYMMDD), start and end times for half-hourly data (HHMMSS), and sometimes a time-of-day indicator (in minutes). For example: `3B-HHR.MS.MRG.3IMERG.20241201-S233000-E235959.1410.V07B.nc4`.  |
+| Variable Names & Units    | Primary variable is usually `precipitationCal` or similar, representing the merged satellite-gauge precipitation estimate, often with units of millimeters per hour (mm/hr) or millimeters per day (mm/day) for daily products. Verify metadata within the NetCDF files for precise variable names and units. Other variables include error estimates (`err`), and counts of contributing satellite retrievals (`nobs`, `HQprecipitation`).  |
+| Coordinate Systems        | Latitude and longitude based on the World Geodetic System 1984 (WGS 84) datum. Coordinate variables are typically named `lat` and `lon`. The time coordinate is usually in UTC (Coordinated Universal Time) as seconds or days since a reference epoch.   |
+| Data Processing           | Use libraries like `xarray`, `rioxarray`, `netCDF4` (Python) or `raster` (R) for NetCDF file handling. Pay close attention to latitude and longitude coordinates and the time dimension. Handle missing data flags appropriately. Consider the need for temporal aggregation (e.g., daily or monthly totals) or spatial averaging Runs) and their implications for data quality and latency.     |
+
+## API Information for Climate Datasets
+
+| API Availability          | Link to API Information                   | How to Utilize                   |
+|---------------------------|-------------------------------------------|----------------------------------|
+| No Direct API             | [Google Earth Engine API Docs](https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07) (if using GEE) | Access via Google Earth Engine API if the IMERG dataset is available in the GEE catalog. Use GEE's Python or JavaScript API to filter by time and spatial extent, and to download or process the data.  |
+| ERDDAP Servers (Potential) | Search for ERDDAP servers hosting IMERG data (e.g., NOAA ERDDAP).  | ERDDAP provides a web interface and APIs (e.g., OPeNDAP, griddap) to access and download subsets of the data in various formats (NetCDF, CSV, etc.).  |
+| Python Libraries          | Libraries like `requests` or `urllib` can be used to directly download files from the GES DISC FTP/HTTP servers if you know the file URLs. | Construct the appropriate URLs based on the GES DISC file structure and use Python to download the files. Then, use `netCDF4` or `xarray` to read and process the downloaded NetCDF files.  |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+| Potential Applications        | Rainfall pattern analysis, drought monitoring, extreme precipitation event analysis relevant to agricultural impacts (floods, dry spells), crop yield modeling (as precipitation is a key input), water resource management for irrigation, agroclimatic zoning based on rainfall regimes, validation of local rainfall data or downscaled climate model outputs. The half-hourly and daily resolutions can capture sub-daily and daily rainfall variability important for hydrological processes affecting agriculture. |
+| Strengths for AE Research       | High spatial resolution allows for localized analysis relevant to farm-level studies. Long temporal coverage (since 2000) enables trend analysis and understanding of historical precipitation variability. Quasi-global coverage allows for studies across different agroecological zones. Integration of multiple satellite sensors and ground gauge data generally leads to higher accuracy compared to satellite-only products, especially in the Final Run.  |
+| Limitations for AE Research     | Indirect satellite measurements can still have biases, especially in regions with complex terrain, coastlines, or during frozen precipitation. Does not include other crucial agroecological variables like temperature, solar radiation, humidity, etc. Spatial resolution might still be too coarse for very localized microclimatic studies within farms. Different IMERG runs have varying latency and accuracy; the near real-time products (Early, Late) might be less accurate than the research-oriented Final Run.   |
+
+## Further Resources
+
+| Resource Type           | Description/Link                                                 |
+|-------------------------|------------------------------------------------------------------|
+| User Guides/Documentation | Primary source is the NASA GES DISC website: [GES DISC IMERG Documentation](https://www.google.com/search?q=https://disc.gsfc.nasa.gov/information/documents%3Fkeywords%3DIMERG). Look for documents related to the algorithm, data quality, and user guides. The GPM mission website ([https://gpm.nasa.gov/](https://gpm.nasa.gov/)) also has relevant information. |
+| Community/Support       | NASA GES DISC provides user support. Contact information can usually be found on their website. Online forums related to remote sensing, climate data, or specific software (e.g., Earth Engine Developer Forum) might also have discussions and solutions related to IMERG data.   |
+
+
 </details>
+
 
 
 
