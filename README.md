@@ -472,7 +472,69 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 
 </details>
 
+<details>
+  <summary> Crop dataset </summary>
 
+  # AgMIP-GGCMI Crop Calendar
+
+## Overview
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Short Description** | The AgMIP-GGCMI Crop Calendar is a global dataset providing multi-year average planting (sowing) and maturity (harvest) dates for 18 major crops, distinguishing between rainfed and irrigated systems, at 0.5° spatial resolution. It is a composite product merging various observational data sources and is designed to support harmonized crop modeling and climate impact assessments. |
+| **Provider/Source**  | AgMIP (Agricultural Model Intercomparison and Improvement Project) and GGCMI (Global Gridded Crop Model Intercomparison), led by institutions including NASA GISS, Potsdam Institute for Climate Impact Research, University of Minnesota, and University of Goettingen. |
+| **Homepage/Link**    | [Zenodo Dataset](https://doi.org/10.5281/zenodo.5062513) |
+| **License/Terms of Use** | Open for research and non-commercial use; cite original sources as appropriate. |
+| **Spatial Coverage** | Global, 0.5° x 0.5° land grid cells. |
+| **Temporal Coverage** | Multi-year average (static growing periods; no interannual variability). |
+| **Spatial Resolution** | 0.5° x 0.5° latitude/longitude. |
+| **Temporal Resolution** | One growing season per crop per grid cell (with exceptions for wheat and rice). |
+| **Key Variables** | Planting day of year (DOY), maturity (harvest) day of year (DOY) for 18 crops, with separate values for rainfed and irrigated systems. |
+| **18 crops covered** | The 18 crops covered in the AgMIP-GGCMI Crop Calendar are: 1. Maize, 2. Wheat (including winter and spring wheat), 3. Rice (including two main growing seasons), 4. Soybean, 5. Barley, 6. Millet, 7. Rapeseed, 8. Rye, 9. Sorghum, 10. Sugar beet, 11. Sugar cane, 12. Cotton, 13. Cassava, 14. Groundnut, 15. Field pea, 16. Sunflower, 17. Dry bean, 18. Potato. |
+## Data Access and Format
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Access Methods**   | Download from [Zenodo](https://doi.org/10.5281/zenodo.5062513); source code and tools available on [GitHub](https://github.com/AgMIP-GGCMI/cropCalendars). |
+| **Data Formats**     | NetCDF (.nc), CSV, and R data objects. |
+| **Data Organization**| Organized by crop, grid cell, and management system (rainfed/irrigated); one growing season per crop/cell, except for wheat and rice (multiple seasons). |
+| **Potential Challenges** | Static averages only; no crop rotations or interannual variability; gap-filling and spatial extrapolation in areas lacking observations. |
+
+## Technical Details
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **File Naming Conventions** | Typically includes crop name, management system, and phase (e.g., `maize_rainfed_phase3.nc`). |
+| **Variable Names & Units** | Planting_day (DOY), Maturity_day (DOY); units are day of year (1–365/366). |
+| **Coordinate Systems** | Latitude and longitude in WGS 84 datum; grid cell centers. |
+| **Data Processing** | Composite of multiple observational sources; spatial extrapolation and gap-filling for uncultivated or missing areas; only a single season per crop/cell except for wheat and rice. |
+| **Handling Missing Data** | Gap-filled using best available sources; uncultivated areas extrapolated. |
+
+## API Information
+
+| API Availability | Description |
+|------------------|-------------|
+| **Direct API**   | No direct API. |
+| **Programmatic Access** | Data and scripts available for download and batch processing via [Zenodo](https://doi.org/10.5281/zenodo.5062513) and [GitHub](https://github.com/AgMIP-GGCMI/cropCalendars); R scripts provided for simulation and adaptation of crop calendars. |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+| Potential Applications| <br> - Calibration of crop model phenology (e.g., heat unit/PHU requirements) <br> - Harmonization of growing periods for multi-model crop simulations and climate impact studies <br> - Assessment of climate change impacts on crop timing and yields at regional to global scales <br> - Scenario development for adaptation strategies by simulating changes in planting/harvest dates|
+| Strengths | <br> - Consistent, global, crop-specific growing periods for 18 major crops <br> - Distinguishes between rainfed and irrigated systems <br> - Supports harmonized, reproducible crop modeling and climate impact research|
+| Limitations | <br> - Provides static (multi-year average) growing periods only; no annual variability or crop rotations <br> - Extrapolated data in areas with sparse observations; users should check data quality for their region of interest|
+
+## Further Resources
+
+| Resource Type       | Description/Link |
+|---------------------|------------------|
+| **User Guides/Documentation** | [Zenodo Dataset Documentation](https://doi.org/10.5281/zenodo.5062513); [GitHub Repository for Scripts](https://github.com/AgMIP-GGCMI/cropCalendars). |
+| **Primary Publication** | Jägermeyr et al. (2021), "Climate impacts on global agriculture emerge earlier in new generation of climate and crop," Nature Food, [DOI](https://www.nature.com/articles/s43016-021-00400-y). |
+| **Additional Studies** | Minoli et al. (2022), "Global crop yields can be lifted by timely adaptation of growing periods to climate change," Nature Communications, [DOI](https://doi.org/10.1038/s41467-022-34411-5). |
+| **Community/Support** | Contact dataset authors via Zenodo or institutional affiliations listed in the dataset record. |
+  
+</details>
 
 
 <details>
