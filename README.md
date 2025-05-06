@@ -409,6 +409,66 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | User Guides/Documentation | Primary source is the NASA GES DISC website: [GES DISC IMERG Documentation](https://www.google.com/search?q=https://disc.gsfc.nasa.gov/information/documents%3Fkeywords%3DIMERG). Look for documents related to the algorithm, data quality, and user guides. The GPM mission website ([https://gpm.nasa.gov/](https://gpm.nasa.gov/)) also has relevant information. |
 | Community/Support       | NASA GES DISC provides user support. Contact information can usually be found on their website. Online forums related to remote sensing, climate data, or specific software (e.g., Earth Engine Developer Forum) might also have discussions and solutions related to IMERG data.   |
 
+# 8. NASA Earth Exchange Global Daily Downscaled Projections (NEX-GDDP)
+
+## Overview
+
+| Attribute           | Description                                                                                          |
+|---------------------|------------------------------------------------------------------------------------------------------|
+| **Short Description**   | NEX-GDDP provides global, high-resolution (0.25°) daily climate projections downscaled from CMIP5 and CMIP6 GCMs, including key variables for climate impact studies. |
+| **Provider/Source**     | NASA Earth Exchange (NEX)                                                                            |
+| **Homepage/Link**       | [NEX-GDDP CMIP5](https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp), [NEX-GDDP-CMIP6](https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp-cmip6) |
+| **License/Terms of Use**| Open for scientific research; not recommended for commercial/engineering use without expert consultation. |
+| **Spatial Coverage**    | Global (CMIP5: 50°S–50°N; CMIP6: 60°S–90°N).                                                  |
+| **Temporal Coverage**   | 1950–2100 (CMIP5: 1950–2099; CMIP6: 1950–2100).                                             |
+| **Spatial Resolution**  | 0.25° x 0.25° (~25 km).                                                                     |
+| **Temporal Resolution** | Daily                                                                                                |
+| **Key Variables**       | tasmin (daily min temperature, K), tasmax (daily max temperature, K), precipitation (kg m⁻² s⁻¹). |
+
+## Data Access and Format
+
+| Attribute         | Description                                                                                                               |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------|
+| **Access Methods**    | Download via NASA NCCS THREDDS, AWS S3, Google Earth Engine.                                                  |
+| **Data Formats**      | netCDF4 (classic and enhanced).                                                                                     |
+| **Data Organization** | Organized by scenario (RCP/SSP), model, variable, and year. Files are typically per variable per year per model.     |
+| **Potential Challenges** | Large dataset size (up to 38 TB for CMIP6), requires netCDF-compatible tools (e.g., xarray, netCDF4, CDO).        |
+
+## Technical Details
+
+| Attribute             | Description                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------|
+| **File Naming Conventions** | Typically includes model, scenario, variable, and year (e.g., pr_day_ACCESS-CM2_historical_2014.nc). |
+| **Variable Names & Units** | tasmin (K), tasmax (K), pr (kg m⁻² s⁻¹).                                         |
+| **Coordinate Systems**     | Latitude/longitude, WGS84 datum.                                                        |
+| **Data Processing**        | Downscaling via Bias-Correction Spatial Disaggregation (BCSD); time in days since model-dependent reference. |
+| **Handling Missing Data**  | Standard netCDF conventions; check metadata for fill values.                               |
+
+## API Information
+
+| API Availability | Description                                                                                      |
+|------------------|--------------------------------------------------------------------------------------------------|
+| **Direct API**       | No dedicated REST API.                                                                           |
+| **Google Earth Engine** | Datasets available for analysis via GEE Python/JavaScript APIs.                         |
+| **Programmatic Access** | Download and subsetting via THREDDS (NetCDFSubset), AWS S3, wget/cURL scripting.        |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+| Potential Applications| Climate risk assessment, crop yield modeling, drought and heat stress analysis, water resource planning, agroclimatic zoning, validation of local climate data. |
+| Strengths | High spatial and temporal resolution for local/regional studies, global coverage, daily data for temperature and precipitation, bias-corrected projections from multiple GCMs and scenarios.|
+| Limitations | Does not include other agroclimatic variables (e.g., solar radiation, humidity), file sizes can be challenging, requires technical expertise for data handling, and projections are subject to GCM and downscaling uncertainties. |
+
+## Further Resources
+
+| Resource Type     | Description/Link                                                                                  |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| **User Guides**       | [NEX-GDDP Technical Note (CMIP5)](https://esgf.nccs.nasa.gov/esgdoc/NEX-GDDP_Tech_Note_v0.pdf) |
+|                   | [NEX-GDDP-CMIP6 Technical Note](https://www.nccs.nasa.gov/sites/default/files/NEX-GDDP-CMIP6-Tech_Note_4.pdf) |
+| **Community/Support** | Contact NASA NEX team or NCCS Support for technical questions.                              |
+| **Documentation**     | Dataset homepages (see above), Google Earth Engine dataset pages.                           |
+
 
 </details>
 
