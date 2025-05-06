@@ -469,14 +469,75 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | **Community/Support** | Contact NASA NEX team or NCCS Support for technical questions.                              |
 | **Documentation**     | Dataset homepages (see above), Google Earth Engine dataset pages.                           |
 
+# 9. TerraClimate
+
+*TerraClimate is a foundational resource for agroecological, ecological, and hydrological research, offering consistent, high-resolution climate and water balance data for global terrestrial surfaces.*
+
+## Overview
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Short Description** | TerraClimate is a global, high-resolution (~4 km, 1/24°) monthly dataset of climate and climatic water balance variables for terrestrial surfaces, spanning from 1958 to the present. It blends high-resolution climatological normals with coarser time-varying data to provide detailed, temporally consistent climate information. |
+| **Provider/Source**  | Climatology Lab, University of California Merced (UCM) |
+| **Homepage/Link**    | [Climatology Lab TerraClimate](https://www.climatologylab.org/terraclimate.html) |
+| **License/Terms of Use** | Public domain (Creative Commons CC0 license); free for research and operational use. |
+| **Spatial Coverage** | Global (all terrestrial surfaces). |
+| **Temporal Coverage** | January 1958 to present (updated annually). |
+| **Spatial Resolution** | 1/24° (~4 km) latitude/longitude grid. |
+| **Temporal Resolution** | Monthly. |
+| **Key Variables** | Precipitation, maximum temperature, minimum temperature, wind speed, vapor pressure, vapor pressure deficit, downward shortwave radiation, reference evapotranspiration, actual evapotranspiration, climatic water deficit, soil moisture, runoff, snow water equivalent, Palmer Drought Severity Index (PDSI). |
+
+## Data Access and Format
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Access Methods**   | Download via [Climatology Lab website](https://www.climatologylab.org/terraclimate.html), [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/dataset/terraclimate), [Google Earth Engine](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE), and THREDDS servers. |
+| **Data Formats**     | NetCDF (.nc), GeoTIFF (.tif) for some derived products. |
+| **Data Organization**| Files organized by variable and year/month; NetCDF files contain multi-dimensional arrays (time, latitude, longitude, variable). |
+| **Potential Challenges** | Large file sizes; requires software (e.g., netCDF4, xarray, raster, R) for handling; be aware of missing data flags and annual updates. |
+
+## Technical Details
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **File Naming Conventions** | Typically includes variable name, year, and month (e.g., `TerraClimate_ppt_1981.nc`). |
+| **Variable Names & Units** | See documentation; e.g., `ppt` (precipitation, mm), `tmax`/`tmin` (max/min temperature, °C), `ws` (wind speed, m/s), `srad` (solar radiation, W/m²), `aet` (actual evapotranspiration, mm), `pet` (reference evapotranspiration, mm), etc. |
+| **Coordinate Systems** | Latitude and longitude (WGS 84 datum), grid cell centers. |
+| **Data Processing** | Combines WorldClim v2 climatological normals with CRU Ts4.0 and JRA55 reanalysis for monthly variability, using climatically aided interpolation. Water balance variables are generated using a modified Thornthwaite-Mather model. |
+| **Handling Missing Data** | Missing values are flagged; users should check metadata and handle fill values appropriately. |
+
+## API Information
+
+| API Availability | Description |
+|------------------|-------------|
+| **Direct API**   | No dedicated API. |
+| **Programmatic Access** | Accessible via [Google Earth Engine](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE), [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/dataset/terraclimate), and THREDDS servers; can be scripted in Python, R, or other languages using standard geospatial libraries. |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+| Potential Applications |  <br> - Climate trend and variability analysis at local to global scales  <br> - Drought monitoring, water balance studies, and agricultural risk assessment  <br> - Crop yield modeling, agroclimatic zoning, and ecological/hydrological modeling  <br> - Validation and downscaling of coarser climate datasets |
+|Strengths | <br> - High spatial resolution (~4 km) and long temporal coverage (1958–present) <br> - Comprehensive set of climate and water balance variables  <br> - Freely available and widely validated against station and streamflow data|
+|Limitations|  <br> - Monthly temporal resolution may not capture short-term extremes <br> - Large data volumes require robust data handling tools <br> - Some variables are model-derived and may have uncertainties in data-sparse regions |
+
+## Further Resources
+
+| Resource Type       | Description/Link |
+|---------------------|------------------|
+| **User Guides/Documentation** | [Climatology Lab TerraClimate](https://www.climatologylab.org/terraclimate.html), [Scientific Data article](https://www.nature.com/articles/sdata2017191) |
+| **Community/Support** | No dedicated forum; general support via Climatology Lab or climate data user communities. |
+| **R Package** | [datazoom.amazonia vignette for TerraClimate](https://cran.r-project.org/web/packages/datazoom.amazonia/vignettes/TERRACLIMATE.html) |
+  
 
 </details>
 
 <details>
-  <summary> Crop dataset </summary>
+  <summary> Crop Calendar dataset </summary>
 
-  # AgMIP-GGCMI Crop Calendar
+  # 1. AgMIP-GGCMI Crop Calendar
 
+*This crop calendar is a foundational input for global crop modeling, enabling harmonized and reproducible assessments of climate change impacts on agriculture.*
 ## Overview
 
 | Attribute            | Description |
@@ -533,6 +594,187 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 | **Primary Publication** | Jägermeyr et al. (2021), "Climate impacts on global agriculture emerge earlier in new generation of climate and crop," Nature Food, [DOI](https://www.nature.com/articles/s43016-021-00400-y). |
 | **Additional Studies** | Minoli et al. (2022), "Global crop yields can be lifted by timely adaptation of growing periods to climate change," Nature Communications, [DOI](https://doi.org/10.1038/s41467-022-34411-5). |
 | **Community/Support** | Contact dataset authors via Zenodo or institutional affiliations listed in the dataset record. |
+
+# 2. WorldCereal Project Crop Calendars
+
+*WorldCereal crop calendars are a foundational input for global crop mapping and monitoring, enabling harmonized and reproducible assessments of crop seasonality and supporting operational agricultural monitoring at scale.*
+
+## Overview
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Short Description** | The WorldCereal Project Crop Calendars provide global, season-specific maps of the start (SOS) and end (EOS) of the growing seasons for key temporary crops, initially focusing on maize and wheat. These calendars are essential for global crop mapping and monitoring, supporting the generation of high-resolution, seasonally updated crop type and irrigation maps. |
+| **Provider/Source**  | WorldCereal Consortium (funded by the European Space Agency, ESA) |
+| **Homepage/Link**    | [WorldCereal Project](https://esa-worldcereal.org/en) <br> [Global crop calendars of maize and wheat (figshare)](https://tandf.figshare.com/articles/dataset/Global_crop_calendars_of_maize_and_wheat_in_the_framework_of_the_WorldCereal_project/20005293) |
+| **License/Terms of Use** | Open and free for research and operational use under Creative Commons Attribution 4.0 License. |
+| **Spatial Coverage** | Global, with stratification into agro-ecological zones (AEZs). |
+| **Temporal Coverage** | Currently available for 2021 (Phase I); designed for seasonal and annual updates. |
+| **Spatial Resolution** | 0.5° x 0.5° latitude/longitude grid (approx. 50 km at equator); crop type maps at 10 m resolution. |
+| **Temporal Resolution** | Seasonally updated; provides start and end dates for each major growing season per crop. |
+| **Key Variables** | Start of Season (SOS), End of Season (EOS) for maize and wheat (winter and spring cereals); future versions will include additional crops (sunflower, rapeseed, millet, sorghum, barley, rye, soybean). |
+
+## Data Access and Format
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Access Methods**   | Download from [figshare dataset page](https://tandf.figshare.com/articles/dataset/Global_crop_calendars_of_maize_and_wheat_in_the_framework_of_the_WorldCereal_project/20005293) (includes gridded SOS/EOS maps and documentation); additional products and documentation available on the [WorldCereal website](https://esa-worldcereal.org/en). |
+| **Data Formats**     | NetCDF, GeoTIFF, and CSV for spatial data; PDF and web documentation. |
+| **Data Organization**| Organized by crop, season (winter cereals, main maize, secondary maize), and grid cell; maps provided globally at 0.5° resolution. |
+| **Potential Challenges** | Currently focused on maize and wheat; spatial resolution of crop calendars is coarser (0.5°) than crop type maps (10 m); future versions will expand crop and temporal coverage. |
+
+## Technical Details
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **File Naming Conventions** | Files typically include crop, season, and variable (e.g., `SOS_maize_main_2021.tif`). |
+| **Variable Names & Units** | SOS (start of season), EOS (end of season); units are day-of-year (1–365/366). |
+| **Coordinate Systems** | Latitude/longitude (WGS84 datum) for gridded data; crop type maps use UTM or geographic coordinates. |
+| **Data Processing** | Crop calendars are generated by merging national/subnational calendars (GEOGLAM, USDA-FAS, FAO, ASAP) and training a spatially aware Random Forest model using ERA5 climate data to estimate SOS/EOS at each grid cell. This enables stratification into zones with similar growing seasons for crop mapping. |
+| **Handling Missing Data** | In areas lacking source data, crop calendars are simulated using climate and geographic predictors; quality flags and confidence layers are provided. |
+
+## API Information
+
+| API Availability | Description |
+|------------------|-------------|
+| **Direct API**   | No dedicated API for crop calendars. |
+| **Programmatic Access** | Data downloadable via [figshare](https://tandf.figshare.com/articles/dataset/Global_crop_calendars_of_maize_and_wheat_in_the_framework_of_the_WorldCereal_project/20005293) and [WorldCereal website](https://esa-worldcereal.org/en); can be integrated into GIS and remote sensing workflows using standard geospatial libraries. |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+| Potential Applications  | <br> - Crop-type mapping and monitoring at global and regional scales  <br> - Crop condition monitoring, yield estimation, and forecasting   <br> - Agroecological zoning and adaptation scenario development  <br> - Supporting operational crop monitoring systems and early warning  <br> - Input for crop models and remote sensing analysis |
+| Strengths  |  <br> - Combines multiple authoritative sources and machine learning for robust, spatially explicit crop calendars  <br> - Season-specific, global coverage for maize and wheat, with future expansion to more crops  <br>- Supports high-resolution (10 m) crop type and irrigation mapping |
+| Limitations |  <br> - Currently limited to maize and wheat (expansion ongoing)  <br> - Crop calendars at 0.5° resolution, which may be coarse for local studies  <br> - Simulated data in regions with sparse observational input; users should review confidence layers|
+
+## Further Resources
+
+| Resource Type       | Description/Link |
+|---------------------|------------------|
+| **User Guides/Documentation** | [WorldCereal Final Report (PDF)](https://esa-worldcereal.org/sites/worldcereal/files/VITO-WorldCereal-rapport-FINAL_0.pdf) <br> [ESSD Data Descriptor Article](https://essd.copernicus.org/articles/15/5491/2023/) |
+| **Dataset Download** | [figshare: Global crop calendars of maize and wheat](https://tandf.figshare.com/articles/dataset/Global_crop_calendars_of_maize_and_wheat_in_the_framework_of_the_WorldCereal_project/20005293) |
+| **Community/Support** | Contact via [WorldCereal website](https://esa-worldcereal.org/en) or through project partners. |
+
+# 3. MIRCA-OS (Monthly Irrigated and Rainfed Cropped Area, Open Source)
+
+*The MIRCA-OS dataset is a valuable resource for agroecological research, providing detailed spatial and temporal crop area information essential for modeling and monitoring agricultural systems globally.*
+## Overview
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Short Description** | MIRCA-OS is a global, open-source dataset providing monthly irrigated and rainfed cropped area maps for 23 crop classes at 5-arcminute (~10 km) spatial resolution for the years 2000, 2005, 2010, and 2015. It combines subnational crop-specific harvested area statistics with global gridded land cover and crop calendar data to produce monthly growing area grids and annual harvested area maps. |
+| **Provider/Source**  | Developed by an international team led by researchers associated with AgMIP and global land use modeling groups. |
+| **Homepage/Link**    | [MIRCA-OS Dataset Description (Nature Scientific Data)](https://www.nature.com/articles/s41597-024-04313-w) | [GitHub Repository (Code)](https://github.com/MIRCA-OS/MIRCA-OS_Code) | [HydroShare Dataset](https://www.hydroshare.org/resource/60a890eb841c460192c03bb590687145/) |
+| **License/Terms of Use** | Open for research and non-commercial use; citation of original dataset recommended. |
+| **Spatial Coverage** | Global (180°W to 180°E longitude, 90°S to 90°N latitude). |
+| **Temporal Coverage** | Years 2000, 2005, 2010, and 2015. |
+| **Spatial Resolution** | 5 arcminutes (approx. 10 km x 10 km); also annual maps at 0.5° resolution. |
+| **Temporal Resolution** | Monthly growing area grids representing crop growth stages from planting to maturity. |
+| **Key Variables** | Monthly growing area (ha) for irrigated and rainfed systems, annual harvested area (ha), crop calendars (planting and maturity months). |
+|**23 crops covered**|The 23 major crops covered in the MIRCA-OS dataset, with distinctions for irrigated and rainfed systems, are: 1. Barley, 2. Cassava (Tapioca), 3. Cocoa, 4. Coffee, 5. Cotton, 6. Fodder (Alfalfa; grasses and legumes; clover; hay; haylage), 7. Groundnuts (Peanuts), 8. Maize (Corn, including grain, silage, sweet corn, popcorn), 9. Millet (Pearl millet; finger millet; small millet), 10. Oil palm, 11. Potatoes, 12. Pulses (Chickpeas; pigeon peas; cowpeas; peas, beans; lentils; other pulses), 13. Rapeseed (Canola; mustard), 14. Rice (Paddy), 15. Rye, 16. Sugar beet, 17. Sugar cane, 18. Sorghum (grain and silage), 19. Soybeans, 20. Sunflower, 21. Wheat (spring soft wheat; winter soft wheat; durum), 22. Other perennials (e.g., almonds, apples, bananas, citrus fruits, grapes, olives, etc.), 23. Other annuals (various crops not listed above)|
+
+## Data Access and Format
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Access Methods**   | Download via [HydroShare](https://www.hydroshare.org/resource/60a890eb841c460192c03bb590687145/), [GitHub (code)](https://github.com/MIRCA-OS/MIRCA-OS_Code), and journal supplementary materials. |
+| **Data Formats**     | GeoTIFF and NetCDF for spatial data; CSV for crop calendars. |
+| **Data Organization**| Organized by crop, year, irrigation system (irrigated/rainfed), and month; includes monthly growing area grids, maximum monthly growing area maps, and annual harvested area maps. |
+| **Potential Challenges** | Large file sizes; requires GIS or scientific programming tools to process (e.g., Python with xarray, R, QGIS). |
+
+## Technical Details
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **File Naming Conventions** | Format includes crop name, sub-crop number (for multiple cropping), year, irrigation system, and version (e.g., MIRCA-OS_Rice1_2015_ir_v0.1.nc). |
+| **Variable Names & Units** | Growing area or harvested area in hectares (ha). Monthly layers numbered 1–12 represent January to December. |
+| **Coordinate Systems** | Longitude/latitude in WGS84 datum. |
+| **Data Processing** | Combines subnational harvested area statistics with global land cover and crop calendars; downscaled to 5-arcminute grids using area weighting and cropping calendars; gap-filling and mosaicking applied. |
+| **Handling Missing Data** | Areas with no crop presence assigned zero; gap-filling based on regional statistics and land cover. |
+
+## API Information
+
+| API Availability | Description |
+|------------------|-------------|
+| **Direct API**   | No dedicated API available. |
+| **Programmatic Access** | Data and processing scripts available on [GitHub](https://github.com/MIRCA-OS/MIRCA-OS_Code); datasets downloadable for use in GIS and programming environments. |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+|**Potential Applications:**  | <br> - Mapping spatial and temporal distribution of crop areas for yield modeling and food security assessments  <br> - Differentiating irrigated and rainfed cropping systems in climate impact and water resource studies  <br> - Supporting crop phenology and cropping intensity analyses  <br> - Input for crop models requiring spatially explicit cropped area and calendar information |
+| **Strengths:**  |  <br> - High spatial (5 arcminutes) and temporal (monthly) resolution <br> - Covers 23 major crops with irrigated and rainfed distinctions  <br> - Combines statistical and remote sensing data for improved accuracy |
+| **Limitations:**  | <br> - Temporal coverage limited to four years (2000, 2005, 2010, 2015)  <br> - Static within each year, no interannual variability   <br> - Requires technical skills to process large spatial datasets|
+
+## Further Resources
+
+| Resource Type       | Description/Link |
+|---------------------|------------------|
+| **User Guides/Documentation** | [Nature Scientific Data Article](https://www.nature.com/articles/s41597-024-04313-w) describing dataset and methodology. |
+| **Code Repository** | [MIRCA-OS GitHub Repository](https://github.com/MIRCA-OS/MIRCA-OS_Code) with data processing scripts. |
+| **Dataset Download** | [HydroShare MIRCA-OS Dataset](https://www.hydroshare.org/resource/60a890eb841c460192c03bb590687145/) |
+| **Community/Support** | Contact dataset authors via GitHub or corresponding publication. |
+
+# 4. TerraClimate
+
+*TerraClimate is a foundational resource for agroecological, ecological, and hydrological research, offering consistent, high-resolution climate and water balance data for global terrestrial surfaces.*
+
+## Overview
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Short Description** | TerraClimate is a global, high-resolution (~4 km, 1/24°) monthly dataset of climate and climatic water balance variables for terrestrial surfaces, spanning from 1958 to the present. It blends high-resolution climatological normals with coarser time-varying data to provide detailed, temporally consistent climate information. |
+| **Provider/Source**  | Climatology Lab, University of California Merced (UCM) |
+| **Homepage/Link**    | [Climatology Lab TerraClimate](https://www.climatologylab.org/terraclimate.html) |
+| **License/Terms of Use** | Public domain (Creative Commons CC0 license); free for research and operational use. |
+| **Spatial Coverage** | Global (all terrestrial surfaces). |
+| **Temporal Coverage** | January 1958 to present (updated annually). |
+| **Spatial Resolution** | 1/24° (~4 km) latitude/longitude grid. |
+| **Temporal Resolution** | Monthly. |
+| **Key Variables** | Precipitation, maximum temperature, minimum temperature, wind speed, vapor pressure, vapor pressure deficit, downward shortwave radiation, reference evapotranspiration, actual evapotranspiration, climatic water deficit, soil moisture, runoff, snow water equivalent, Palmer Drought Severity Index (PDSI). |
+
+## Data Access and Format
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **Access Methods**   | Download via [Climatology Lab website](https://www.climatologylab.org/terraclimate.html), [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/dataset/terraclimate), [Google Earth Engine](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE), and THREDDS servers. |
+| **Data Formats**     | NetCDF (.nc), GeoTIFF (.tif) for some derived products. |
+| **Data Organization**| Files organized by variable and year/month; NetCDF files contain multi-dimensional arrays (time, latitude, longitude, variable). |
+| **Potential Challenges** | Large file sizes; requires software (e.g., netCDF4, xarray, raster, R) for handling; be aware of missing data flags and annual updates. |
+
+## Technical Details
+
+| Attribute            | Description |
+|----------------------|-------------|
+| **File Naming Conventions** | Typically includes variable name, year, and month (e.g., `TerraClimate_ppt_1981.nc`). |
+| **Variable Names & Units** | See documentation; e.g., `ppt` (precipitation, mm), `tmax`/`tmin` (max/min temperature, °C), `ws` (wind speed, m/s), `srad` (solar radiation, W/m²), `aet` (actual evapotranspiration, mm), `pet` (reference evapotranspiration, mm), etc. |
+| **Coordinate Systems** | Latitude and longitude (WGS 84 datum), grid cell centers. |
+| **Data Processing** | Combines WorldClim v2 climatological normals with CRU Ts4.0 and JRA55 reanalysis for monthly variability, using climatically aided interpolation. Water balance variables are generated using a modified Thornthwaite-Mather model. |
+| **Handling Missing Data** | Missing values are flagged; users should check metadata and handle fill values appropriately. |
+
+## API Information
+
+| API Availability | Description |
+|------------------|-------------|
+| **Direct API**   | No dedicated API. |
+| **Programmatic Access** | Accessible via [Google Earth Engine](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE), [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/dataset/terraclimate), and THREDDS servers; can be scripted in Python, R, or other languages using standard geospatial libraries. |
+
+## Relevance for Agroecological Research
+
+| Application/Strength/Limitation | Description                            |
+|---------------------------------|----------------------------------------|
+| Potential Applications |  <br> - Climate trend and variability analysis at local to global scales  <br> - Drought monitoring, water balance studies, and agricultural risk assessment  <br> - Crop yield modeling, agroclimatic zoning, and ecological/hydrological modeling  <br> - Validation and downscaling of coarser climate datasets |
+|Strengths | <br> - High spatial resolution (~4 km) and long temporal coverage (1958–present) <br> - Comprehensive set of climate and water balance variables  <br> - Freely available and widely validated against station and streamflow data|
+|Limitations|  <br> - Monthly temporal resolution may not capture short-term extremes <br> - Large data volumes require robust data handling tools <br> - Some variables are model-derived and may have uncertainties in data-sparse regions |
+
+## Further Resources
+
+| Resource Type       | Description/Link |
+|---------------------|------------------|
+| **User Guides/Documentation** | [Climatology Lab TerraClimate](https://www.climatologylab.org/terraclimate.html), [Scientific Data article](https://www.nature.com/articles/sdata2017191) |
+| **Community/Support** | No dedicated forum; general support via Climatology Lab or climate data user communities. |
+| **R Package** | [datazoom.amazonia vignette for TerraClimate](https://cran.r-project.org/web/packages/datazoom.amazonia/vignettes/TERRACLIMATE.html) |
   
 </details>
 
