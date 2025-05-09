@@ -785,7 +785,7 @@ The “Advancing Climate Data Integration in Agroecological Research” project,
 #  I.	Direct Environmental Indicators: 
 These are measurements of the climatic factors themselves and their deviations from the norm. This section helps to gain a better understanding of the climatic stresses affecting crop production in a given area and makes informed decisions to mitigate potential negative impacts. It provides definitions, calculation methods, formulas, and relevant R and Python packages:
 
-## I. Temperature Extremes
+## 1. Temperature Extremes
 ### Definition of Terms
 |Term       |	Definition   |
 |-----------|--------------|
@@ -886,7 +886,7 @@ print(f"Number of heatwave days (simplified): {heatwave_days}")
 
 ```
 
-## II. Precipitation Anomalies
+## 2. Precipitation Anomalies
 
 ### Definition of Terms
 
@@ -945,8 +945,6 @@ These indicators are calculated from daily precipitation data.
 <summary> Drought Indices </summary>
   
 # Drought Indicators and Indices
-
-
 
 ## Outline
 
