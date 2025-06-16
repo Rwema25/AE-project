@@ -1,5 +1,5 @@
 # AE-project
-The “Advancing Climate Data Integration in Agroecological Research” project, aims to improve the capacity of agroecological researchers and practitioners to integrate climate data into their work. Access the GitHub repository [here](https://github.com/Rwema25/AEproject) for easy navigation and reference.
+The “Advancing Climate Data Integration in Agroecological Research” project, aims to improve the capacity of agroecological researchers and practitioners to integrate climate data into their work. Access the GitHub repository [here](https://github.com/Rwema25/AEproject) and [web page](https://rwema25.github.io/AEproject/) for easy navigation and reference.
 
 <details>
   <summary> Climate datasets documentation </summary>
